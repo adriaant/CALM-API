@@ -1,0 +1,11 @@
+# sample network for self-organization CALMMap test
+# plain map
+1
+# one input
+1
+# set up each module in turn
+pat  input  12
+A    map    9
+# now we define connections
+A  1  pat normal
+

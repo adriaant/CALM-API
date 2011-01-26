@@ -1,0 +1,24 @@
+.SILENT:
+
+CC = g++ -O4 -funroll-all-loops -fexpensive-optimizations
+AR = ar
+RM = rm -f
+TOUCH = touch
+
+WHERE=`pwd`/
+HOME = /Users/adriaant/
+
+OPTIONS = 
+MFLAGS = all
+
+OBJECT_DIR = ../obj/
+LIBRARY_DIR = ../calmlib/lib/
+INCLUDE_DIR = -I$(WHERE)$(LEVEL)../calmlib/include/ -I$(WHERE)$(LEVEL)../include/
+LO = $(WHERE)$(LEVEL)$(OBJECT_DIR)
+LL = $(WHERE)$(LEVEL)$(LIBRARY_DIR)
+
+LIBDIRS = -L$(LL)
+
+LIBS = -lcalm
+
+

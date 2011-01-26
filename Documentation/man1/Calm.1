@@ -1,0 +1,103 @@
+.\"Modified from man(1) of FreeBSD, the NetBSD mdoc.template, and mdoc.samples.
+.\"See Also:
+.\"man mdoc.samples for a complete listing of options
+.\"man mdoc for the short list of editing options
+.\"/usr/share/misc/mdoc.template
+.Dd Fri Apr 11 2003               \" DATE 
+.Dt CALM 1      \" Program name and manual section number 
+.Os Darwin
+.Sh NAME                 \" Section Header - required - don't modify 
+.Nm calm
+.\" The following lines are read in generating the apropos(man -k) database. Use only key
+.\" words here as the database is built based on the words here and in the .ND line. 
+.\" Use .Nm macro to designate other names for the documented program.
+.Nd executable for the CALM-API Library.
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+.Nm
+.Op Fl reipbdcv
+.Op Fl r Ar runs
+.Op Fl e Ar epochs
+.Op Fl i Ar iterations
+.Op Fl p Ar type
+.Op Fl b Ar name
+.Op Fl d Ar directory
+.Op Fl v Ar verbosity
+.Nm
+.Op Fl h
+
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+.Nm 
+sets up a Categorization-And-Learning-Module neural network architecture and trains it with a set of stimuli that are provided either online or offline. It requires the user to specify the basename of the network specification file and optional pattern files as well as the directory in which these files reside.
+.Pp
+The run-time options are as follows:
+.Bl -tag -width -indent  \" Differs from above in tag removed 
+.It Fl h                 \"-a flag as a list item
+Display the set of options and their default values.
+.It Fl r
+Specify how often a given simulation should be replicated. The default value is 1. Providing any number below 1 makes you an idiot.
+.It Fl e
+Specify the number of epochs. By default this refers to one pass of the full pattern set.
+.It Fl i
+Specify how often a single pattern is presented to the network.
+.It Fl p
+Specify how a set of offline patterns is trained. Patterns can be trained in the order they are defined in a file (0) or in permuted order (1).
+.It Fl b
+Provide the base filename (
+.Ar example
+) of a network specification file (
+.Ar example.net
+), the CALM parameters file (
+.Ar example.par
+), as well as the pattern files for offline learning (
+.Ar example.pat
+). 
+.It Fl d
+Provide the directory in which the network specification file, the parameter file, and the pattern files reside.
+.It Fl v
+Indicate the verbosity level of the network. This will specify what information the simulator will report to the standard output during training and testing. The argument is the sum of the following optional values:
+.Pp
+.Bl -tag -width indent -compact
+.It 0
+Silent mode.
+.It 1
+Print the indices of the winning R-nodes for every module.
+.lt 2
+Print output activations.
+.It 4
+Print rounded output activations (as 0 or 1).
+.It 8
+Print the potentials of R-nodes (which are used to determine growing or shrinking of modules).
+.It 16
+Print the weights of the network.
+.It 32
+Save intermediate weight changes to file.
+.It 64
+Save total activation changes to file (activations are over R-nodes).
+.It 128
+Save learning-rate changes to file.
+.El
+.El                      \" Ends the list
+.Pp
+.Sh FILES                \" File used or created by the topic of the man page
+.Bl -tag -width "simulations/" -compact
+.It Pa calmlib/
+Source files and binary for the CALM-API library. Don't mess in there!
+.It Pa simulations/
+Example simulation files. Abuse at will.
+.\" .Sh DIAGNOSTICS       \" May not be needed
+.\" .Bl -diag
+.\" .It Diagnostic Tag
+.\" Diagnostic informtion here.
+.\" .It Diagnostic Tag
+.\" Diagnostic informtion here.
+.El
+.Sh SEE ALSO 
+.\" List links in ascending order by section, alphabetically within a section.
+.\" Please do not reference files that do not exist without filing a bug report
+The online documentation for the use of the API, found at 
+.Pp
+.Dl http://www.kung-foo.tv/calmapi.php
+
+.\" .Sh BUGS              \" Document known, unremedied bugs 
+.\" .Sh HISTORY           \" Document history if command behaves in a unique manner 
+

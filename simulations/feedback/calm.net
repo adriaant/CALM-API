@@ -1,0 +1,14 @@
+# plain calm
+2
+# input
+1
+# set up each module in turn
+# the input module with 8 nodes
+pat     input   8
+A       fb	2
+B       calm    4
+# now we define connections
+# A receives from pat and B
+A       2       pat	normal	B	normal
+B       2       pat	normal	A	normal
+

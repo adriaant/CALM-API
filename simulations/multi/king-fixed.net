@@ -1,0 +1,26 @@
+# time-delay network for seq-calm mix
+# calm modules
+8
+# input modules
+2
+# set up each module in turn. Always start with input
+seq	input	16
+ctx input	16
+i1	calm 10
+i2	calm 8
+d1 calm 8
+d2 calm 8
+d3 calm 8
+d4 calm 8
+agg calm 10
+out	fb 2
+# now we define connections
+i1	2	seq	normal out normal
+i2	2	ctx	normal out normal
+d1 2	i1	delay	4	agg delay 4
+d2 2	i1	delay	5	agg delay 5
+d3 2	i1	delay	6	agg delay 6
+d4 2	i1	delay	7	agg delay 7
+agg	4	d1 normal d2 normal d3 normal d4 normal
+out	2	agg normal i2 normal
+

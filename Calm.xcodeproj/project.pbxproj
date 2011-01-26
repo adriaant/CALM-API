@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB0D54310F99FAC000B9E5E4 /* AnalysisTools.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D54090F99FAA700B9E5E4 /* AnalysisTools.h */; };
+		FB0D54320F99FAC000B9E5E4 /* AUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D540A0F99FAA700B9E5E4 /* AUnit.h */; };
+		FB0D54330F99FAC000B9E5E4 /* CALM.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D540B0F99FAA700B9E5E4 /* CALM.h */; };
+		FB0D54340F99FAC000B9E5E4 /* CALMGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D540C0F99FAA700B9E5E4 /* CALMGlobal.h */; };
+		FB0D54350F99FAC000B9E5E4 /* CALMNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D540D0F99FAA700B9E5E4 /* CALMNetwork.h */; };
+		FB0D54360F99FAC000B9E5E4 /* CALMPatterns.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D540E0F99FAA700B9E5E4 /* CALMPatterns.h */; };
+		FB0D54370F99FAC000B9E5E4 /* CALMUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D540F0F99FAA700B9E5E4 /* CALMUnit.h */; };
+		FB0D54380F99FAC000B9E5E4 /* CALMWeight.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D54100F99FAA700B9E5E4 /* CALMWeight.h */; };
+		FB0D54390F99FAC000B9E5E4 /* Connection.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D54110F99FAA700B9E5E4 /* Connection.h */; };
+		FB0D543A0F99FAC000B9E5E4 /* EUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D54120F99FAA700B9E5E4 /* EUnit.h */; };
+		FB0D543B0F99FAC000B9E5E4 /* Feedback.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D54130F99FAA700B9E5E4 /* Feedback.h */; };
+		FB0D543C0F99FAC000B9E5E4 /* GnuPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D54140F99FAA700B9E5E4 /* GnuPlot.h */; };
+		FB0D543D0F99FAC000B9E5E4 /* ImageFile.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D54150F99FAA700B9E5E4 /* ImageFile.h */; };
+		FB0D543E0F99FAC000B9E5E4 /* Module.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D54160F99FAA700B9E5E4 /* Module.h */; };
+		FB0D543F0F99FAC000B9E5E4 /* ModuleMap.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D54170F99FAA700B9E5E4 /* ModuleMap.h */; };
+		FB0D54400F99FAC000B9E5E4 /* PGMImage.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D54180F99FAA700B9E5E4 /* PGMImage.h */; };
+		FB0D54410F99FAC000B9E5E4 /* Rnd.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D54190F99FAA700B9E5E4 /* Rnd.h */; };
+		FB0D54420F99FAC000B9E5E4 /* RUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D541A0F99FAA700B9E5E4 /* RUnit.h */; };
+		FB0D54430F99FAC000B9E5E4 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D541B0F99FAA700B9E5E4 /* Utilities.h */; };
+		FB0D54440F99FAC000B9E5E4 /* VUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0D541C0F99FAA700B9E5E4 /* VUnit.h */; };
+		FB0D544D0F99FAEA00B9E5E4 /* CALM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D544B0F99FAE200B9E5E4 /* CALM.cpp */; };
+		FB0D54810F99FCCB00B9E5E4 /* AUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54770F99FCC600B9E5E4 /* AUnit.cpp */; };
+		FB0D54820F99FCCB00B9E5E4 /* CALMUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54780F99FCC600B9E5E4 /* CALMUnit.cpp */; };
+		FB0D54830F99FCCB00B9E5E4 /* EUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54790F99FCC600B9E5E4 /* EUnit.cpp */; };
+		FB0D54840F99FCCB00B9E5E4 /* RUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D547A0F99FCC600B9E5E4 /* RUnit.cpp */; };
+		FB0D54850F99FCCB00B9E5E4 /* VUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D547B0F99FCC600B9E5E4 /* VUnit.cpp */; };
+		FB0D54860F99FCD100B9E5E4 /* Connection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D546F0F99FB2300B9E5E4 /* Connection.cpp */; };
+		FB0D54870F99FCD100B9E5E4 /* Feedback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54700F99FB2300B9E5E4 /* Feedback.cpp */; };
+		FB0D54880F99FCD100B9E5E4 /* Module.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54710F99FB2400B9E5E4 /* Module.cpp */; };
+		FB0D54890F99FCD100B9E5E4 /* ModuleMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54720F99FB2400B9E5E4 /* ModuleMap.cpp */; };
+		FB0D548A0F99FCD500B9E5E4 /* AnalysisTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D545D0F99FB1C00B9E5E4 /* AnalysisTools.cpp */; };
+		FB0D548B0F99FCD500B9E5E4 /* CALMNetwork.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D545E0F99FB1C00B9E5E4 /* CALMNetwork.cpp */; };
+		FB0D548C0F99FCD500B9E5E4 /* CALMPatterns.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D545F0F99FB1C00B9E5E4 /* CALMPatterns.cpp */; };
+		FB0D548D0F99FCD500B9E5E4 /* CALMWeight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54600F99FB1C00B9E5E4 /* CALMWeight.cpp */; };
+		FB0D548E0F99FCD500B9E5E4 /* GnuPlot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54610F99FB1C00B9E5E4 /* GnuPlot.cpp */; };
+		FB0D548F0F99FCD500B9E5E4 /* ImageFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54620F99FB1C00B9E5E4 /* ImageFile.cpp */; };
+		FB0D54900F99FCD500B9E5E4 /* PGMImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54630F99FB1C00B9E5E4 /* PGMImage.cpp */; };
+		FB0D54910F99FCD500B9E5E4 /* Rnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54640F99FB1C00B9E5E4 /* Rnd.cpp */; };
+		FB0D54920F99FCD500B9E5E4 /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54650F99FB1C00B9E5E4 /* Utilities.cpp */; };
+		FB0D54C00F9A0A7C00B9E5E4 /* libcalm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0D54080F99FA7300B9E5E4 /* libcalm.a */; };
+		FB0D54D00F9A0ADF00B9E5E4 /* SampleOnline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54CF0F9A0ADF00B9E5E4 /* SampleOnline.cpp */; };
+		FB0D54D70F9A0B8F00B9E5E4 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54D60F9A0B8F00B9E5E4 /* Main.cpp */; };
+		FB61744E0F9C25D8007F6969 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB0D54D60F9A0B8F00B9E5E4 /* Main.cpp */; };
+		FB6174500F9C25D8007F6969 /* libcalm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0D54080F99FA7300B9E5E4 /* libcalm.a */; };
+		FB61745E0F9C262B007F6969 /* MultiSeqSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB61745A0F9C260B007F6969 /* MultiSeqSample.cpp */; };
+		FB61745F0F9C262B007F6969 /* MultiSequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB61745B0F9C260B007F6969 /* MultiSequence.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F690486A84900D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		FB6174510F9C25D8007F6969 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FB0D54070F99FA0E00B9E5E4 /* Calm.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; name = Calm.1; path = Documentation/man1/Calm.1; sourceTree = "<group>"; };
+		FB0D54080F99FA7300B9E5E4 /* libcalm.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libcalm.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0D54090F99FAA700B9E5E4 /* AnalysisTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalysisTools.h; path = calmlib/include/AnalysisTools.h; sourceTree = "<group>"; };
+		FB0D540A0F99FAA700B9E5E4 /* AUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUnit.h; path = calmlib/include/AUnit.h; sourceTree = "<group>"; };
+		FB0D540B0F99FAA700B9E5E4 /* CALM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CALM.h; path = calmlib/include/CALM.h; sourceTree = "<group>"; };
+		FB0D540C0F99FAA700B9E5E4 /* CALMGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CALMGlobal.h; path = calmlib/include/CALMGlobal.h; sourceTree = "<group>"; };
+		FB0D540D0F99FAA700B9E5E4 /* CALMNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CALMNetwork.h; path = calmlib/include/CALMNetwork.h; sourceTree = "<group>"; };
+		FB0D540E0F99FAA700B9E5E4 /* CALMPatterns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CALMPatterns.h; path = calmlib/include/CALMPatterns.h; sourceTree = "<group>"; };
+		FB0D540F0F99FAA700B9E5E4 /* CALMUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CALMUnit.h; path = calmlib/include/CALMUnit.h; sourceTree = "<group>"; };
+		FB0D54100F99FAA700B9E5E4 /* CALMWeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CALMWeight.h; path = calmlib/include/CALMWeight.h; sourceTree = "<group>"; };
+		FB0D54110F99FAA700B9E5E4 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connection.h; path = calmlib/include/Connection.h; sourceTree = "<group>"; };
+		FB0D54120F99FAA700B9E5E4 /* EUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EUnit.h; path = calmlib/include/EUnit.h; sourceTree = "<group>"; };
+		FB0D54130F99FAA700B9E5E4 /* Feedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Feedback.h; path = calmlib/include/Feedback.h; sourceTree = "<group>"; };
+		FB0D54140F99FAA700B9E5E4 /* GnuPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GnuPlot.h; path = calmlib/include/GnuPlot.h; sourceTree = "<group>"; };
+		FB0D54150F99FAA700B9E5E4 /* ImageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageFile.h; path = calmlib/include/ImageFile.h; sourceTree = "<group>"; };
+		FB0D54160F99FAA700B9E5E4 /* Module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Module.h; path = calmlib/include/Module.h; sourceTree = "<group>"; };
+		FB0D54170F99FAA700B9E5E4 /* ModuleMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModuleMap.h; path = calmlib/include/ModuleMap.h; sourceTree = "<group>"; };
+		FB0D54180F99FAA700B9E5E4 /* PGMImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGMImage.h; path = calmlib/include/PGMImage.h; sourceTree = "<group>"; };
+		FB0D54190F99FAA700B9E5E4 /* Rnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rnd.h; path = calmlib/include/Rnd.h; sourceTree = "<group>"; };
+		FB0D541A0F99FAA700B9E5E4 /* RUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RUnit.h; path = calmlib/include/RUnit.h; sourceTree = "<group>"; };
+		FB0D541B0F99FAA700B9E5E4 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utilities.h; path = calmlib/include/Utilities.h; sourceTree = "<group>"; };
+		FB0D541C0F99FAA700B9E5E4 /* VUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VUnit.h; path = calmlib/include/VUnit.h; sourceTree = "<group>"; };
+		FB0D544B0F99FAE200B9E5E4 /* CALM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CALM.cpp; path = calmlib/API/CALM.cpp; sourceTree = "<group>"; };
+		FB0D545D0F99FB1C00B9E5E4 /* AnalysisTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnalysisTools.cpp; path = calmlib/Misc/AnalysisTools.cpp; sourceTree = "<group>"; };
+		FB0D545E0F99FB1C00B9E5E4 /* CALMNetwork.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CALMNetwork.cpp; path = calmlib/Misc/CALMNetwork.cpp; sourceTree = "<group>"; };
+		FB0D545F0F99FB1C00B9E5E4 /* CALMPatterns.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CALMPatterns.cpp; path = calmlib/Misc/CALMPatterns.cpp; sourceTree = "<group>"; };
+		FB0D54600F99FB1C00B9E5E4 /* CALMWeight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CALMWeight.cpp; path = calmlib/Misc/CALMWeight.cpp; sourceTree = "<group>"; };
+		FB0D54610F99FB1C00B9E5E4 /* GnuPlot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GnuPlot.cpp; path = calmlib/Misc/GnuPlot.cpp; sourceTree = "<group>"; };
+		FB0D54620F99FB1C00B9E5E4 /* ImageFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImageFile.cpp; path = calmlib/Misc/ImageFile.cpp; sourceTree = "<group>"; };
+		FB0D54630F99FB1C00B9E5E4 /* PGMImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PGMImage.cpp; path = calmlib/Misc/PGMImage.cpp; sourceTree = "<group>"; };
+		FB0D54640F99FB1C00B9E5E4 /* Rnd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Rnd.cpp; path = calmlib/Misc/Rnd.cpp; sourceTree = "<group>"; };
+		FB0D54650F99FB1C00B9E5E4 /* Utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Utilities.cpp; path = calmlib/Misc/Utilities.cpp; sourceTree = "<group>"; };
+		FB0D546F0F99FB2300B9E5E4 /* Connection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Connection.cpp; path = calmlib/Module/Connection.cpp; sourceTree = "<group>"; };
+		FB0D54700F99FB2300B9E5E4 /* Feedback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Feedback.cpp; path = calmlib/Module/Feedback.cpp; sourceTree = "<group>"; };
+		FB0D54710F99FB2400B9E5E4 /* Module.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Module.cpp; path = calmlib/Module/Module.cpp; sourceTree = "<group>"; };
+		FB0D54720F99FB2400B9E5E4 /* ModuleMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModuleMap.cpp; path = calmlib/Module/ModuleMap.cpp; sourceTree = "<group>"; };
+		FB0D54770F99FCC600B9E5E4 /* AUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUnit.cpp; path = calmlib/Unit/AUnit.cpp; sourceTree = "<group>"; };
+		FB0D54780F99FCC600B9E5E4 /* CALMUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CALMUnit.cpp; path = calmlib/Unit/CALMUnit.cpp; sourceTree = "<group>"; };
+		FB0D54790F99FCC600B9E5E4 /* EUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EUnit.cpp; path = calmlib/Unit/EUnit.cpp; sourceTree = "<group>"; };
+		FB0D547A0F99FCC600B9E5E4 /* RUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RUnit.cpp; path = calmlib/Unit/RUnit.cpp; sourceTree = "<group>"; };
+		FB0D547B0F99FCC600B9E5E4 /* VUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VUnit.cpp; path = calmlib/Unit/VUnit.cpp; sourceTree = "<group>"; };
+		FB0D54BE0F9A0A6E00B9E5E4 /* calm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = calm; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0D54CF0F9A0ADF00B9E5E4 /* SampleOnline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SampleOnline.cpp; path = exec/SampleOnline.cpp; sourceTree = "<group>"; };
+		FB0D54D60F9A0B8F00B9E5E4 /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Main.cpp; path = exec/Main.cpp; sourceTree = "<group>"; };
+		FB6174550F9C25D8007F6969 /* multisequence */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = multisequence; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB61745A0F9C260B007F6969 /* MultiSeqSample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MultiSeqSample.cpp; path = exec/MultiSeqSample.cpp; sourceTree = "<group>"; };
+		FB61745B0F9C260B007F6969 /* MultiSequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MultiSequence.cpp; path = exec/MultiSequence.cpp; sourceTree = "<group>"; };
+		FB6174770F9C26A5007F6969 /* MultiSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiSequence.h; path = include/MultiSequence.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F660486A84900D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB0D54C00F9A0A7C00B9E5E4 /* libcalm.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB61744F0F9C25D8007F6969 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB6174500F9C25D8007F6969 /* libcalm.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB7E6F530F5A842B008FD5BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* Gabor */ = {
+			isa = PBXGroup;
+			children = (
+				FB0D54D60F9A0B8F00B9E5E4 /* Main.cpp */,
+				FB0D544B0F99FAE200B9E5E4 /* CALM.cpp */,
+				FB0D545A0F99FB0D00B9E5E4 /* Unit */,
+				FB0D54570F99FB0A00B9E5E4 /* Module */,
+				FB0D54500F99FAFD00B9E5E4 /* Misc */,
+				FB7E6F6D0F5A8F26008FD5BA /* Tools */,
+				08FB7795FE84155DC02AAC07 /* include */,
+				C6859E8C029090F304C91782 /* Documentation */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = Gabor;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				FB0D54090F99FAA700B9E5E4 /* AnalysisTools.h */,
+				FB0D540A0F99FAA700B9E5E4 /* AUnit.h */,
+				FB0D540B0F99FAA700B9E5E4 /* CALM.h */,
+				FB0D540C0F99FAA700B9E5E4 /* CALMGlobal.h */,
+				FB0D540D0F99FAA700B9E5E4 /* CALMNetwork.h */,
+				FB0D540E0F99FAA700B9E5E4 /* CALMPatterns.h */,
+				FB0D540F0F99FAA700B9E5E4 /* CALMUnit.h */,
+				FB0D54100F99FAA700B9E5E4 /* CALMWeight.h */,
+				FB0D54110F99FAA700B9E5E4 /* Connection.h */,
+				FB0D54120F99FAA700B9E5E4 /* EUnit.h */,
+				FB0D54130F99FAA700B9E5E4 /* Feedback.h */,
+				FB0D54140F99FAA700B9E5E4 /* GnuPlot.h */,
+				FB0D54150F99FAA700B9E5E4 /* ImageFile.h */,
+				FB0D54160F99FAA700B9E5E4 /* Module.h */,
+				FB0D54170F99FAA700B9E5E4 /* ModuleMap.h */,
+				FB0D54180F99FAA700B9E5E4 /* PGMImage.h */,
+				FB0D54190F99FAA700B9E5E4 /* Rnd.h */,
+				FB0D541A0F99FAA700B9E5E4 /* RUnit.h */,
+				FB0D541B0F99FAA700B9E5E4 /* Utilities.h */,
+				FB0D541C0F99FAA700B9E5E4 /* VUnit.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB0D54080F99FA7300B9E5E4 /* libcalm.a */,
+				FB0D54BE0F9A0A6E00B9E5E4 /* calm */,
+				FB6174550F9C25D8007F6969 /* multisequence */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6859E8C029090F304C91782 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				FB0D54070F99FA0E00B9E5E4 /* Calm.1 */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		FB0D54500F99FAFD00B9E5E4 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				FB0D545D0F99FB1C00B9E5E4 /* AnalysisTools.cpp */,
+				FB0D545E0F99FB1C00B9E5E4 /* CALMNetwork.cpp */,
+				FB0D545F0F99FB1C00B9E5E4 /* CALMPatterns.cpp */,
+				FB0D54600F99FB1C00B9E5E4 /* CALMWeight.cpp */,
+				FB0D54610F99FB1C00B9E5E4 /* GnuPlot.cpp */,
+				FB0D54620F99FB1C00B9E5E4 /* ImageFile.cpp */,
+				FB0D54630F99FB1C00B9E5E4 /* PGMImage.cpp */,
+				FB0D54640F99FB1C00B9E5E4 /* Rnd.cpp */,
+				FB0D54650F99FB1C00B9E5E4 /* Utilities.cpp */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		FB0D54570F99FB0A00B9E5E4 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				FB0D546F0F99FB2300B9E5E4 /* Connection.cpp */,
+				FB0D54700F99FB2300B9E5E4 /* Feedback.cpp */,
+				FB0D54710F99FB2400B9E5E4 /* Module.cpp */,
+				FB0D54720F99FB2400B9E5E4 /* ModuleMap.cpp */,
+			);
+			name = Module;
+			sourceTree = "<group>";
+		};
+		FB0D545A0F99FB0D00B9E5E4 /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				FB0D54770F99FCC600B9E5E4 /* AUnit.cpp */,
+				FB0D54780F99FCC600B9E5E4 /* CALMUnit.cpp */,
+				FB0D54790F99FCC600B9E5E4 /* EUnit.cpp */,
+				FB0D547A0F99FCC600B9E5E4 /* RUnit.cpp */,
+				FB0D547B0F99FCC600B9E5E4 /* VUnit.cpp */,
+			);
+			name = Unit;
+			sourceTree = "<group>";
+		};
+		FB7E6F6D0F5A8F26008FD5BA /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				FB6174770F9C26A5007F6969 /* MultiSequence.h */,
+				FB0D54CF0F9A0ADF00B9E5E4 /* SampleOnline.cpp */,
+				FB61745A0F9C260B007F6969 /* MultiSeqSample.cpp */,
+				FB61745B0F9C260B007F6969 /* MultiSequence.cpp */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FB7E6F510F5A842B008FD5BA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB0D54310F99FAC000B9E5E4 /* AnalysisTools.h in Headers */,
+				FB0D54320F99FAC000B9E5E4 /* AUnit.h in Headers */,
+				FB0D54330F99FAC000B9E5E4 /* CALM.h in Headers */,
+				FB0D54340F99FAC000B9E5E4 /* CALMGlobal.h in Headers */,
+				FB0D54350F99FAC000B9E5E4 /* CALMNetwork.h in Headers */,
+				FB0D54360F99FAC000B9E5E4 /* CALMPatterns.h in Headers */,
+				FB0D54370F99FAC000B9E5E4 /* CALMUnit.h in Headers */,
+				FB0D54380F99FAC000B9E5E4 /* CALMWeight.h in Headers */,
+				FB0D54390F99FAC000B9E5E4 /* Connection.h in Headers */,
+				FB0D543A0F99FAC000B9E5E4 /* EUnit.h in Headers */,
+				FB0D543B0F99FAC000B9E5E4 /* Feedback.h in Headers */,
+				FB0D543C0F99FAC000B9E5E4 /* GnuPlot.h in Headers */,
+				FB0D543D0F99FAC000B9E5E4 /* ImageFile.h in Headers */,
+				FB0D543E0F99FAC000B9E5E4 /* Module.h in Headers */,
+				FB0D543F0F99FAC000B9E5E4 /* ModuleMap.h in Headers */,
+				FB0D54400F99FAC000B9E5E4 /* PGMImage.h in Headers */,
+				FB0D54410F99FAC000B9E5E4 /* Rnd.h in Headers */,
+				FB0D54420F99FAC000B9E5E4 /* RUnit.h in Headers */,
+				FB0D54430F99FAC000B9E5E4 /* Utilities.h in Headers */,
+				FB0D54440F99FAC000B9E5E4 /* VUnit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F620486A84900D96B5E /* CalmApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "CalmApp" */;
+			buildPhases = (
+				8DD76F640486A84900D96B5E /* Sources */,
+				8DD76F660486A84900D96B5E /* Frameworks */,
+				8DD76F690486A84900D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CalmApp;
+			productInstallPath = "$(HOME)/bin";
+			productName = Gabor;
+			productReference = FB0D54BE0F9A0A6E00B9E5E4 /* calm */;
+			productType = "com.apple.product-type.tool";
+		};
+		FB61744B0F9C25D8007F6969 /* MultiSequence */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB6174520F9C25D8007F6969 /* Build configuration list for PBXNativeTarget "MultiSequence" */;
+			buildPhases = (
+				FB61744C0F9C25D8007F6969 /* Sources */,
+				FB61744F0F9C25D8007F6969 /* Frameworks */,
+				FB6174510F9C25D8007F6969 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MultiSequence;
+			productInstallPath = "$(HOME)/bin";
+			productName = Gabor;
+			productReference = FB6174550F9C25D8007F6969 /* multisequence */;
+			productType = "com.apple.product-type.tool";
+		};
+		FB7E6F540F5A842B008FD5BA /* CalmLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB7E6F580F5A8464008FD5BA /* Build configuration list for PBXNativeTarget "CalmLib" */;
+			buildPhases = (
+				FB7E6F510F5A842B008FD5BA /* Headers */,
+				FB7E6F520F5A842B008FD5BA /* Sources */,
+				FB7E6F530F5A842B008FD5BA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CalmLib;
+			productName = GaborLib;
+			productReference = FB0D54080F99FA7300B9E5E4 /* libcalm.a */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "Calm" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* Gabor */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD76F620486A84900D96B5E /* CalmApp */,
+				FB7E6F540F5A842B008FD5BA /* CalmLib */,
+				FB61744B0F9C25D8007F6969 /* MultiSequence */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F640486A84900D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB0D54D00F9A0ADF00B9E5E4 /* SampleOnline.cpp in Sources */,
+				FB0D54D70F9A0B8F00B9E5E4 /* Main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB61744C0F9C25D8007F6969 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB61744E0F9C25D8007F6969 /* Main.cpp in Sources */,
+				FB61745E0F9C262B007F6969 /* MultiSeqSample.cpp in Sources */,
+				FB61745F0F9C262B007F6969 /* MultiSequence.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB7E6F520F5A842B008FD5BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB0D548A0F99FCD500B9E5E4 /* AnalysisTools.cpp in Sources */,
+				FB0D548B0F99FCD500B9E5E4 /* CALMNetwork.cpp in Sources */,
+				FB0D548C0F99FCD500B9E5E4 /* CALMPatterns.cpp in Sources */,
+				FB0D548D0F99FCD500B9E5E4 /* CALMWeight.cpp in Sources */,
+				FB0D548E0F99FCD500B9E5E4 /* GnuPlot.cpp in Sources */,
+				FB0D548F0F99FCD500B9E5E4 /* ImageFile.cpp in Sources */,
+				FB0D54900F99FCD500B9E5E4 /* PGMImage.cpp in Sources */,
+				FB0D54910F99FCD500B9E5E4 /* Rnd.cpp in Sources */,
+				FB0D54920F99FCD500B9E5E4 /* Utilities.cpp in Sources */,
+				FB0D54860F99FCD100B9E5E4 /* Connection.cpp in Sources */,
+				FB0D54870F99FCD100B9E5E4 /* Feedback.cpp in Sources */,
+				FB0D54880F99FCD100B9E5E4 /* Module.cpp in Sources */,
+				FB0D54890F99FCD100B9E5E4 /* ModuleMap.cpp in Sources */,
+				FB0D54810F99FCCB00B9E5E4 /* AUnit.cpp in Sources */,
+				FB0D54820F99FCCB00B9E5E4 /* CALMUnit.cpp in Sources */,
+				FB0D54830F99FCCB00B9E5E4 /* EUnit.cpp in Sources */,
+				FB0D54840F99FCCB00B9E5E4 /* RUnit.cpp in Sources */,
+				FB0D54850F99FCCB00B9E5E4 /* VUnit.cpp in Sources */,
+				FB0D544D0F99FAEA00B9E5E4 /* CALM.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB923208733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_GLIBCXX_DEBUG=1",
+					"_GLIBCXX_DEBUG_PEDANTIC=1",
+				);
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = gabor;
+			};
+			name = Debug;
+		};
+		1DEB923308733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = calm;
+			};
+			name = Release;
+		};
+		1DEB923608733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		1DEB923708733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+		FB6174530F9C25D8007F6969 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_GLIBCXX_DEBUG=1",
+					"_GLIBCXX_DEBUG_PEDANTIC=1",
+				);
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = multisequence;
+			};
+			name = Debug;
+		};
+		FB6174540F9C25D8007F6969 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = multisequence;
+			};
+			name = Release;
+		};
+		FB7E6F560F5A842C008FD5BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_EXTENSION = a;
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/lib;
+				MACH_O_TYPE = staticlib;
+				PREBINDING = NO;
+				PRODUCT_NAME = calm;
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+			};
+			name = Debug;
+		};
+		FB7E6F570F5A842C008FD5BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_EXTENSION = a;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				MACH_O_TYPE = staticlib;
+				PREBINDING = NO;
+				PRODUCT_NAME = calm;
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "CalmApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923208733DC60010E9CD /* Debug */,
+				1DEB923308733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "Calm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923608733DC60010E9CD /* Debug */,
+				1DEB923708733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB6174520F9C25D8007F6969 /* Build configuration list for PBXNativeTarget "MultiSequence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB6174530F9C25D8007F6969 /* Debug */,
+				FB6174540F9C25D8007F6969 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB7E6F580F5A8464008FD5BA /* Build configuration list for PBXNativeTarget "CalmLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB7E6F560F5A842C008FD5BA /* Debug */,
+				FB7E6F570F5A842C008FD5BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

@@ -1,0 +1,21 @@
+# number of calm modules
+7
+# number of input modules
+1
+# module names, types and sizes
+seq	input	16
+i1	calm	31
+d1	calm	6
+d2	calm	14
+d3	calm	22
+d4	calm	11
+agg	calm	26
+out	fb	10
+# connections
+i1	2	seq normal out normal 
+d1	2	i1 delay 4 agg delay 4 
+d2	2	i1 delay 5 agg delay 5 
+d3	2	i1 delay 6 agg delay 6 
+d4	2	i1 delay 7 agg delay 7 
+agg	4	d1 normal d2 normal d3 normal d4 normal 
+out	1	agg normal 

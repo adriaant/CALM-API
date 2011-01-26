@@ -1,0 +1,15 @@
+# the simplest CALM network
+	# one plain calm module
+1
+	# one input module
+1
+
+# set up each module in turn
+	# the input module with 2 nodes
+pat	input	2
+	# the output module with 2 nodes
+out	calm	2
+
+# now we define connections
+	# "out" receives from input module
+out 1	pat normal

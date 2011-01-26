@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Adriaan Tijsseling" />
+  <meta name="copyright" content="Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License" />
+  <meta name="robots" content="all" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://infinite-sushi.com/styles/basic.css" />
+  <title>infinite-sushi.com: CALM-API</title>
+</head>
+<body>
+
+<h2>Categorization-And-Learning-Module API</h2>
+
+<ul>
+<li><a href="#1">Introduction</a></li>
+<li><a href="#3">Installation</a></li>
+<li><a href="#5">File Format</a></li>
+<li><a href="#6">Usage</a></li>
+<li><a href="#7">Sequences</a></li>
+</ul>
+
+<a name="1"></a>
+<h3>Introduction</h3>
+
+<p>
+The CALM-API is a C++ code library for the Categorization-And-Learning-Module neural architecture, a neural network algorithm originally developed by <a href="http://www.murre.com/">Murre</a>, Phaf and Wolters. The API implementation has a long history, with its origins in the now deceased MacOS 9 application, called Poise. The current instantiation is purely UNIX-based, providing the necessary routines for the user to access data and methods of the CALM neural network, with support for both online and offline learning. The API library is designed in OOP-style, allowing access via an encapsulated interface. Employing calls to an instantiated API library , the user can flexibly design a set of routines to run a simulation. Example simulation code is included in the downloadable archive. 
+</p>
+
+<a name="3"></a>
+<h3>Installation</h3>
+<p>
+Unpack the downloaded tar.gz file in the directory of your choosing. To compile the library, navigate to the subdirectory <code class="yellow">calmlib/</code> and just issue a <code class="green">make</code> command. The Makefile located in <code class="yellow">exec/</code> will compile an executable based on the library and a set of simulation code files, which you will need to specify in the Makefile. The <code class="yellow">bin/</code> directory listed in the Makefile, where the compiled executables will be installed, needs to be modified to reflect the user's own home directory. If you are using Project Builder, you will also need to modify the working directory in the Custom Build Command Settings of the "CALMLib" and "CALMExec" targets. Included in the package are <code class="yellow">Main.cpp</code> and <code class="yellow">MultiSequence.cpp</code>, both of which do not need any modifications. The first file creates a command-line executable that can be called with a set of run-time options, described in <code class="yellow">Main.cpp</code> as well as the man page. The second file is a support file for training the network with a set of offline sequences. The files <code class="yellow">SampleOffline.cpp</code>, <code class="yellow">SampleOnline.cpp</code>, <code class="yellow">SampleFeedback.cpp</code>, and <code class="yellow">MultiSeqSample.cpp</code> provide extensively commented illustrative examples. The latter file demonstrates offline training of multiple sequences, with the option to not only use feedback signals, but also to grow and prune CALM modules. 
+</p><p>
+In addition, sample network specification, parameter and pattern files are also included in the directory <code class="yellow">simulations/</code>. The <code class="yellow">multi/</code> subdirectory provides the necessary files to run the sample multiple sequence training procedure. 
+</p>
+
+<a name="5"></a>
+<h3>File Format</h3>
+<p>
+Specifications for the network architecture, parameters, and input patterns are defined in text files with appropriate suffixes. These files should be in the same directory and share the same base name. The MultiSequence class requires a set of pattern files, each defining a single sequence. These filenames should conform to the format
+"<code class="yellow">basename-</code><code class="green">index</code><code class="yellow">.pat</code>" with <code class="green">index</code> a number starting at 0. For example, <code class="yellow">multi-0.pat</code>, <code class="yellow">multi-1.pat</code>, and so on. The following extensions are required:<br />
+ <code class="yellow">.net</code>: specifications for the network<br />
+ <code class="yellow">.par</code>: parameters for the network<br />
+ <code class="yellow">.pat</code>: training patterns<br />
+ <code class="yellow">.fb</code>: feedback signals<br />
+<code class="red">&#8658;</code>&nbsp;Network specification files should be in the following format:</p>
+<pre>
+# comments follow a hedge. The API will ignore the rest of the line.
+# first list the number of CALM modules. Here, we only have one.
+1
+# then list the number of input modules (yes, you can have more than one).
+1
+# set up each module in turn, starting with the input modules
+# the input module has name "pat", is an "input" module, containing 2 nodes
+pat <code class="red">input</code> 2
+# the output module (which is just a plain CALM module), is named "out" and has 2 nodes
+# possible other module types are '<code class="red">map</code>' and '<code class="red">fb</code>' for the self-organizing CALMMap and the 
+# feedback module, respectively
+out <code class="red">calm</code> 2
+# define connections: "out" receives activations from "pat". It's the only connection.
+# the other possible connection type is '<code class="red">delay</code>', which also requires the delay value
+# of the connection, which should be an integer greater than 0.
+out 1 pat <code class="red">normal</code>
+</pre>
+<p>
+<code class="red">&#8658;</code>&nbsp;Parameter files should be in the following format:</p>
+<pre>
+# the values for the fixed intra-modular connections
+0.5      # UP
+-0.2     # DOWN
+-10.0    # CROSS
+-1.0     # FLAT
+-0.6     # HIGH
+0.4      # LOW
+1.0      # AE
+0.1      # ER
+# initial value for the learning weight
+0.6      # INITWT
+# activation value criteria used to determine convergence of a module (i.e. is there a winner?)
+0.1      # LOWCRIT
+0.1      # HIGHCRIT
+# parameters for learning and activation rule (see CALM documentation)
+0.05     # activation rule decay-parameter
+1.0      # maximum weight value (K)
+0.0      # minimum weight value
+1.0      # learning rule L-parameter
+0.0001   # base learning-rate
+0.005    # virtual weight from the E-node to the learning rate parameter
+# Gaussian weight update parameters
+0.5      # G_L
+0.25     # G_W
+# feedback-related parameters
+1.0      # learning-rate amplification for feedback signals
+1.0      # feedback activation amplification
+# CALMMap-related parameter (unused)
+0.1      # SIGMA
+# parameters to control growing and shrinking
+50.0     # percentual difference between maximum and next-largest potential needed to grow
+0.0001   # minimum potential before node is marked for pruning
+# below are obsolete parameters (leave as is)
+0        # U_L
+8.8      # A
+10       # B
+</pre>
+<p>
+<code class="red">&#8658;</code>&nbsp;Pattern files follow the following format. The first line indicates the number of patterns in the file (this should be the same for each input module), with subsequent lines specifing the pattern set for each input module, in the same order in which the input modules have been declared in the network specification file). For example:</p>
+<pre>
+# 2 patterns
+2
+# set of patterns for first input module
+1 1 0 0 1 0
+1 1 0 1 1 1
+# for second input module
+0 0 1 1 1 0
+0 1 1 0 1 1
+</pre>
+<p>
+<code class="red">&#8658;</code>&nbsp;A file containing feedback signals follows the same format as the patterns file. Instead of patterns, the indices of the nodes of the feedback module designated to win the competition are listed. The order of indices follows the order of patterns in the patterns file. 
+</p>
+
+<a name="6"></a>
+<h3>Usage</h3>
+<p>
+In order to program custom simulation code, the user must adhere to the following API usage guidelines, assuming the provided <code class="yellow">Main.cpp</code> file will be used. This file already creates a <code class="cyan">CALMAPI</code> instance, which must be externally declared in the custom simulation file:</p>
+<pre class="green">
+extern CALMAPI *gCALMAPI;
+</pre>
+<p>The API is itself a class called <code class="cyan">CALMAPI</code> and which must be instantiated (as is done inside <code class="yellow">Main.cpp</code>) before any API call is made. In addition, two functions should be defined, which are declared as:</p>
+<pre class="green">
+bool InitNetwork( void );
+void DoSimulation( void );
+</pre>
+<p>
+<code class="red">&#8658;</code>&nbsp;In the <code class="green">InitNetwork()</code> procedure, calls to set up the network architecture plus parameters should be made. A typical sequence of calls is a follows:</p>
+<p>
+Any console output from the library can be redirected to file by providing an initiated and opened <code class="cyan">ofstream</code> instance, but by default it goes to <code class="yellow">cout</code> so the call below does not have to be made.</p>
+<pre class="green">
+gCALMAPI-&gt;SetCALMLog( &amp;cout ); 
+</pre>
+
+<p>
+The next call loads the parameters for the CALM network. This call MUST precede the call to initialize the network. The API library returns an error value if the file could not be loaded. The return code must be checked to allow for safely aborting the simulation.</p>
+<pre class="green">
+if ( gCALMAPI-&gt;CALMLoadParameters() != kNoErr ) return false;
+</pre>
+
+<p>
+The next call allocates the network objects and initializes it using the given network specification file. The API library returns an error value if it could not allocate or initialize the network. The return code must be checked to allow for safely aborting the simulation.</p>
+<pre class="green">
+gCALMAPI-&gt;CALMSetupNetwork( &amp;calmErr );
+if ( calmErr != kNoErr ) return false;
+</pre>
+<p>
+If the simulation is in <b>offline</b> mode, patterns should be loaded after initializing the network:
+</p>
+<pre class="green">
+if ( gCALMAPI-&gt;CALMLoadPatterns() != kNoErr ) return false;
+</pre>
+<p>
+In case a feedback module is used, the feedback signals corresponding to the patterns should also be loaded:</p>
+<pre class="green">
+if ( gCALMAPI-&gt;CALMLoadFeedback() != kNoErr ) return false;
+</pre>
+<p>
+If the simulation is in <b>online</b> mode, the API should be informed that it will be used in online fashion with the following call, which will allocate an internal buffer that is a vector with the length corresponding to the sum of the number of nodes of all input modules:
+</p>
+<pre class="green">
+gCALMAPI-&gt;CALMOnlinePatterns();
+</pre>
+<p>
+In case a feedback module is used, feedback signals must be set manually before training a pattern. The feedback signal is the index of the R node that is designated to represent the current pattern:</p>
+<pre class="green">
+gCALMAPI-&gt;CALMSetFeedback(i);
+</pre>
+
+<p>
+Optionally display a summary of the network settings  and patterns with the following calls:
+</p>
+<pre class="green">
+gCALMAPI-&gt;CALMShow();
+gCALMAPI-&gt;CALMShowPatterns();
+</pre>
+<p>
+<br /><code class="red">&#8658;</code>&nbsp;The <code class="green">DoSimulation()</code> procedure will be responsible for the actual execution of a simulation. Observe the following key steps:</p>
+<p>
+If training in <b>offline</b> mode, make sure patterns were loaded. In addition, if the patterns should be presented in permuted order, issue the call:</p>
+<pre class="green">
+if ( gCALMAPI-&gt;CALMGetOrder() == kPermuted ) gCALMAPI-&gt;CALMPermutePatterns();
+</pre>
+<p>
+Training and testing then proceed using the API built-in routines:</p>
+<pre class="green">
+gCALMAPI-&gt;CALMTrainFile( epoch );
+</pre>
+<p>and</p>
+<pre class="green">
+gCALMAPI-&gt;CALMTestFile( run );
+</pre>
+
+<p>
+For the <b>online</b> training mode, the user must provide the API library with input patterns. To set a custom pattern, use for example:</p>
+<pre class="green">
+for ( int i = 0; i &lt; gCALMAPI-&gt;CALMGetInputLen(); i++ )
+    gCALMAPI-&gt;CALMSetOnlineInput( i, PseudoRNG() );
+</pre>
+<p>
+which just sets a input vector with random values between 0.0 and 1.0. Training and testing then require calling:
+</p>
+<pre class="green">
+gCALMAPI-&gt;CALMTrainSingle( epoch );
+</pre>
+<p>and</p>
+<pre class="green">
+gCALMAPI-&gt;CALMTestSingle( run );
+</pre>
+
+<p>
+Before and during simulation, it may be desirable to reset particular network values. Values that can be reset are weights, activations, winning node information, and time-delay activations. This can be called using a bitwise or operation of the appropriate constants (see CALMGlobal.h). Before commencing a simulation, call the following function to set the weights to zero:</p>
+<pre class="green">
+gCALMAPI-&gt;CALMReset( O_WT | O_TIME | O_WIN );
+</pre>
+
+<p>
+<br /><code class="red">&#8658;</code>&nbsp;Other useful API calls:</p>
+<p>
+Naturally, it would desirable to store the trained weights for future analysis or re-use. The following snippet saves the weights from the CALM network to the file <code class="yellow">final.wts</code> in the same directory as the network specification file (the file extension is added by the API):</p>
+<pre class="green">
+gCALMAPI-&gt;CALMSaveWeights( "final" );
+</pre>
+<p>
+The saved weights can then be re-loading using:</p>
+<pre class="green">
+gCALMAPI-&gt;CALMLoadWeights( "final" );
+</pre>
+
+<p>
+The CALM implementation of CALM-API uses a preliminary method for growing CALM modules and pruning inactive R-V node pairs. After a simulation, the final network architecture may have differently sized modules. In such a case, saving the new network configuration would be recommended.  The following API-call saves the new network architecture to the file <code class="yellow">new-net.net</code> in the same directory as the network specification file (the file extension is added by the API):</p>
+<pre class="green">
+gCALMAPI-&gt;CALMWriteNetwork( &amp;calmErr, "new-net" );
+if ( calmErr != kNoErr ){ /* handle error */ }
+</pre>
+<p>
+To reload the original network for a new run, the following call can be used. After re-loading a network, the patters MUST be re-loaded as well:</p>
+<pre class="green">
+gCALMAPI-&gt;CALMSetupNetwork( &amp;calmErr, gCALMAPI-&gt;CALMGetBasename() );
+if ( gCALMAPI-&gt;CALMLoadPatterns() != kNoErr ){ /* handle error */ };
+</pre>
+
+<p>
+As mentioned earlier, the current CALM implementation allows for growing and shrinking of modules. The method used involves keeping track of an R-nodes so-called "potential", which is a moving average variant of the change in activation of an R-node, modified by the E-node activation. When this potential drops below a given threshold, the corresponding R-V pair is pruned. When the maximum potential value exceeds the second-largest potential by a pre-defined percentage (indicating an off-balanced competition), a new R-V pair is added. (For more information, see the CALM documentation.)</p>
+<p>The easiest way to use the growing/pruning algorithm, is to call</p>
+<pre class="green">
+resized = gCALMAPI->CALMResizeModule();
+</pre>
+<p>after every number of epochs. This function checks if resizing is necessary and proceeds to do so if positive. Any growing or pruning is reported to console and a boolean for true is returned. The API contains calls to check if a module needs resizing and to manually resize a module to a given number of R-V pairs.</p>
+
+<a name="7"></a>
+<h3>Multiple Sequences</h3>
+<p>
+Because of the implementation of time-delay connections (see documentation), the CALM network can be trained with sequential information. The <code class="cyan">MultiSequence</code> class contains routines to train a given network on a set of sequences. Compile an executable for the files <code class="yellow">Main.cpp</code>, <code class="yellow">MultiSequence.cpp</code> and <code class="yellow">MultiSeqSample.cpp</code>, and run it with:</p>
+<pre class="green">
+calm -r 1 -e 10 -i 100 -d simulations/multi -b king -v 0 -p 0
+</pre>
+<p>
+This will use the files in the <code class="yellow">simulations/multi/</code> directory to set up a network for training a set of 10 sequences in incremental fashion, the order of which is defined by the indices of the pattern files. By default, the network allows for pruning and growing and it uses feedback signals, but these can be switched off by setting the appropriate defines on top of the <code class="yellow">MultiSequence.cpp</code> file. The progress and final performance of the network is written to the standard console, as follows. 
+</p>
+<pre>
+    1 [0: 0 1] [1: 1 1] 
+    2 [0: 0 1] [1: 1 1] 
+    3 [0: 0 1] [1: 1 1] 
+    4 [0: 0 1] [1: 1 1] 
+    5 [0: 0 2] [1: 1 1] 
+d3 +1 -> 3
+agg +1 -> 3
+    6 [0: 0 1] [1: 1 1] 
+    7 [0: 0 1] [1: 1 1] 
+    8 [0: 0 1] [1: 1 1] 
+    9 [0: 0 1] [1: 1 1] 
+   10 [0: 0 2] [1: 1 1] 
+   11 [0: 0 1] [1: 1 1] 
+   12 [0: 0 1] [1: 1 1] 
+   13 [0: 0 1] [1: 1 1] 
+   14 [0: 0 1] [1: 1 1] 
+   15 [0: 0 2] [1: 1 1] 
+   16 [0: 0 1] [1: 1 1] 
+   17 [0: 0 0] [1: 1 0] 
+17
+   18 [0: 0 0] [1: 1 0] [2: 1 10] 
+   19 [0: 0 1] [1: 1 1] [2: 1 10] 
+</pre>
+<p>
+The multi-sequence training procedure starts off with two sequences and learns to separate each sequence by means of feedback signals. The first line shows the initial training progress of the first two sequences. In </p>
+<pre>
+1 [0: 0 1] [1: 1 1] 
+</pre>
+<p>the first number indicates the epoch. The first part between square brackets shows, first, the index of the sequence (0), the index of the node of the designated output module that won the competition during a testing phase, and the number of passes through the full sequence before the correct node in the output module won. Every 5 epochs (can be changed by modifying the <code class="cyan">GROWCHECK</code> define in <code class="yellow">MultiSequence.cpp</code>) modules sizes are adapted if necessary. Initially, all modules have 2 R-V pairs (but the <code class="yellow">simulations/multi/</code> directory also contains a network specification file for simulations without growing and pruning). In the console read-out, module sizes for "d3" and "agg" are increased with one R-V pair (growth and shrinkage always occurs one R-V pair at a time). After the 17th epoch, no training was necessary, and a new sequence was added. For more information on the code, consult the comments in the appropriate files. For more information on the simulation, read the <a href="http://infinite-sushi.com/download/calm-multi.pdf">technote</a>. 
+</p>
+<p>
+It is recommended to study the example code files in the <code class="yellow">simulations/</code> folder and the comments inside <code class="yellow">CALM.cpp</code> and <code class="yellow">CALM.h</code>. The file <code class="yellow">Utilities.cpp</code> also contains a set of useful functions, including matrix allocation and disposal.
+</p>
+</body>
+</html>
