@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2011 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
 	Description:	Sample simulation using the CALM API. This particular code trains a CALM
 					network specified in the command line options with a "online" patterns, 
 					i.e. patterns that are not provided with pattern files but that are received
@@ -105,7 +105,7 @@ void DoSimulation( void )
 	else // only do other tests if explicitly set to
 	{
 	// load the learned weights
-		gCALMAPI->CALMLoadWeights( "final" );
+		gCALMAPI->CALMLoadWeights("final");
 
 	// set the input to 0.0
 		for ( int i = 0; i < gCALMAPI->CALMGetInputLen(); i++ ) gCALMAPI->CALMSetOnlineInput( i, 0.0 );
@@ -115,8 +115,7 @@ void DoSimulation( void )
 			"pat", 400, 400, 100, 1000, 0.01, 0.81, 0.1 );
 	
 	// this one shows the effect of a given input on the dynamics of the net
-		phasePlot.PhaseForOnline( 0, gCALMAPI->CALMGetOnlineInput(), 
-			"pat", 250, 10, 1000, 0.0, 0.01, 0.81, 0.1 );
+		phasePlot.PhaseForOnline( 0, gCALMAPI->CALMGetOnlineInput(), "pat", 250, 10, 1000, 0.0, 0.01, 0.81, 0.1 );
 	}
 }
 

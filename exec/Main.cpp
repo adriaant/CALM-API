@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2011 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
 	Description:	Main file for using the CALM API
 					This code creates an executable that uses the CALM API. 
 					The user has to provide the functions InitNetwork() and DoSimulation().

@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		© Copyright 2002-2011 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		ï¿½ Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
 	Description:	CALMWeight class. Every connection between modules has a matrix of weights
 */
 

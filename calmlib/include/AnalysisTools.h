@@ -31,33 +31,33 @@ public:
 	AnalysisTools();
 	~AnalysisTools();
 	
-	void	InitializeBoundaryMatrix( char* mod, char* inp, int xres, int yres, int iters );
-	void	MatrixBoundaryForOnline( int run, data_type* pat, char* mod, char* inp, int xres, int yres, int iters );
+	void	InitializeBoundaryMatrix( char const *mod, char const *inp, int xres, int yres, int iters );
+	void	MatrixBoundaryForOnline( int run, data_type* pat, char const *mod, char const *inp, int xres, int yres, int iters );
 
-	void	InitializeBoundary( char* mod, char* inp, int xres, int yres, int iters );
-	void	BoundaryForOnline( int run, data_type* pat, char* mod, char* inp, int xres, int yres, int iters );
-	void	BoundaryForOffline( int run, char* mod, char* inp, int xres, int yres, int iters,
+	void	InitializeBoundary( char const *mod, char const *inp, int xres, int yres, int iters );
+	void	BoundaryForOnline( int run, data_type* pat, char const *mod, char const *inp, int xres, int yres, int iters );
+	void	BoundaryForOffline( int run, char const *mod, char const *inp, int xres, int yres, int iters,
 										int patIdx, int x, int y );
 
 	void	InitializeBifurcationClamp( int xres, int yres, int trans, 
 										   int iters, data_type start, data_type end );
-	void	InitializeBifurcation( char* inp, int xres, int yres, int trans, 
+	void	InitializeBifurcation( char const *inp, int xres, int yres, int trans,
 								   int iters, data_type start, data_type end, data_type par );
 	void	BifurcationForOnlineClamp( int run, int outIdx, int unit, int xres, int yres,
 									   int trans, int iters, data_type start, data_type end );
-	void	BifurcationForOnline( int run, data_type* pat, char* inp, int xres, int yres, int trans,
+	void	BifurcationForOnline( int run, data_type* pat, char const *inp, int xres, int yres, int trans,
 								  int iters, data_type start, data_type end, data_type par );
-	void	BifurcationForOffline( int run, char* inp, int xres, int yres, int trans, int iters, 
+	void	BifurcationForOffline( int run, char const *inp, int xres, int yres, int trans, int iters,
 								   data_type start, data_type end, data_type par, int patIdx, int x );
 	void	InitializePhaseClamp( int xres, int trans, int iters, data_type start, 
 								data_type step, data_type end );
-	void	InitializePhase( char* inp, int xres, int trans, int iters, 
+	void	InitializePhase( char const *inp, int xres, int trans, int iters,
 							 data_type start, data_type step, data_type end, data_type par );
 	void	PhaseForOnlineClamp( int run, int outIdx, int unit, int xres, int trans, 
 							int iters, data_type start, data_type step, data_type end );
-	void	PhaseForOnline( int run, data_type* pat, char* inp, int xres, int trans, int iters, 
+	void	PhaseForOnline( int run, data_type* pat, char const *inp, int xres, int trans, int iters,
 							data_type start, data_type step, data_type end, data_type par );
-	void	PhaseForOffline( int run, char* inp, int xres, int trans, int iters, 
+	void	PhaseForOffline( int run, char const *inp, int xres, int trans, int iters,
 							 data_type start, data_type step, data_type end,
 							 data_type par, int patIdx, int p );
 

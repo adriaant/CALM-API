@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2011 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
 	Description:	Implementation of Connection class
 */
 
@@ -243,10 +243,13 @@ void Connection::UpdateNormal( int idx, data_type act, data_type mu, data_type b
 			}
 		}
 		
-		// apply the learning rule
-		dw = mu * act * (
+		// apply the Grossberg learning rule
+/*		dw = mu * act * (
 			 ( mParameters[K_Lmax] - w ) * inAct - 
 			   mParameters[L_L] * ( w - mParameters[K_Lmin] ) * ( backAct - w * inAct ) );
+*/
+		// Koutnik variant
+		dw = mu * act * (inAct - w);
 
 		// add to sum of weight changes
 		dw_sum += dw;

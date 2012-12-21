@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2011 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
 	Description:	API interface for the Categorization And Learning Module Network
 */
 
@@ -67,8 +67,8 @@ public:
 		// for saving changes in either weights, total act, and/or learning rate
 	void				CALMSaveChanges( void );
 		// saving/loading weights
-	void				CALMSaveWeights( char* filename );
-	int					CALMLoadWeights( char* filename );
+	void				CALMSaveWeights( char const* filename );
+	int					CALMLoadWeights( char const* filename );
 
 //	INLINES	
 		// R-unit clamping routines, pass index "idx" of module, index "node" of R-unit, and 
@@ -150,7 +150,7 @@ public:
 		// retrieve feedback signal for selected pattern
 	inline int			CALMGetFeedback( int pIdx ){ return mNetwork->GetFeedback( pIdx ); }
 		// Retrieve module index from module name
-	inline int			CALMGetModuleIndex( char* mdlname ){ return mNetwork->GetModuleIndex( mdlname ); }
+	inline int			CALMGetModuleIndex( char const *mdlname ){ return mNetwork->GetModuleIndex( mdlname ); }
 		// Retrieve module size
 	inline int			CALMGetModuleSize( int idx ){ return mNetwork->GetModuleSize( idx ); }
 		// gets the winning node for a given module index

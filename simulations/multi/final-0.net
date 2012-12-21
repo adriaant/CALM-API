@@ -4,13 +4,13 @@
 1
 # module names, types and sizes
 seq	input	16
-i1	calm	31
+i1	calm	10
 d1	calm	6
-d2	calm	14
-d3	calm	22
-d4	calm	11
-agg	calm	26
-out	fb	10
+d2	calm	10
+d3	calm	10
+d4	calm	8
+agg	calm	6
+out	fb	5
 # connections
 i1	2	seq normal out normal 
 d1	2	i1 delay 4 agg delay 4 

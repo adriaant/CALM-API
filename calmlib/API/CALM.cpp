@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2011 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
 	Description:	API interface for the Categorization And Learning Module Network
 */
 
@@ -563,7 +563,7 @@ int CALMAPI::CALMTestFile( int epoch )
 	int			numPatterns = mNetwork->GetNumPatterns();
 	int			i, j;
 	bool		converged = false;
-	data_type	tmpER = CALMGetParameter( ER );
+//	data_type	tmpER = CALMGetParameter( ER );
 	
 	mNetwork->Reset( O_WIN );
 	for ( i = 0; i < numPatterns; i++ )
@@ -634,7 +634,7 @@ void CALMAPI::CALMSetVerbosity( int level )
 // Saves weights to file. Only pass base name without suffix. 
 // The file will be created in the network files directory with
 // .wts suffixed. 
-void CALMAPI::CALMSaveWeights( char* filename )
+void CALMAPI::CALMSaveWeights( char const *filename )
 {
 	char tmpname[256];
 
@@ -649,7 +649,7 @@ void CALMAPI::CALMSaveWeights( char* filename )
 // Loads weights from file. Only pass base name without suffix. 
 // The file will be loaded from the network files directory with
 // .wts suffixed. 
-int CALMAPI::CALMLoadWeights( char* filename )
+int CALMAPI::CALMLoadWeights( char const *filename )
 {
 	char tmpname[256];
 	

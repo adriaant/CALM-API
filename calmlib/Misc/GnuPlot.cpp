@@ -25,7 +25,7 @@ GnuPlot::GnuPlot( int xr1, int xr2, int yr1, int yr2 )
 // not going to use a 3d plot
 	mMatrix = NULL;
 // open the pipe to the gnuplot program
-	mGnuPipe = popen( "/opt/local/bin/gnuplot -persist", "w" );
+	mGnuPipe = popen( "/usr/local/bin/gnuplot -persist", "w" );
 //	fprintf(mGnuPipe, "set term x11\nset mouse\n");
 // indicate the initial range for the plot
 	fprintf( mGnuPipe, "set xrange [%d:%d]\n", xr1, xr2 ); 
@@ -44,7 +44,7 @@ GnuPlot::GnuPlot( int r, int c )
 	mMatrix = new double*[ mRows ];
 	for ( int i = 0; i < mRows; i++ ) mMatrix[i] = new double[ mCols ];
 // open the pipe to the gnuplot program
-	mGnuPipe = popen( "/opt/local/bin/gnuplot -persist", "w" );
+	mGnuPipe = popen( "/usr/local/bin/gnuplot -persist", "w" );
 //	fprintf(mGnuPipe, "set term x11\nset mouse\n");
 // set options for 3d plot
 	fprintf( mGnuPipe, "set hidden3d\n" );	

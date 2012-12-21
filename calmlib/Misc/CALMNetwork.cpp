@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2011 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
 	Description:	Implementation of CALMNetwork class
 */
 
@@ -102,7 +102,7 @@ void CALMNetwork::InitializeModule( int idx, int calmType, int moduleSize, char*
 
 
 // finds the idx of a module from a given name
-int CALMNetwork::GetModuleIndex( char* mdlname )
+int CALMNetwork::GetModuleIndex( char const *mdlname )
 {
 	for ( int i = 0; i < mNumInputModules+mNumModules; i++ )
 	{
@@ -902,7 +902,7 @@ bool CALMNetwork::WriteSpecs( char* filename )
 
 
 // get the string for a module type
-char* CALMNetwork::GetTypeString( int modtype )
+const char* CALMNetwork::GetTypeString( int modtype )
 {
 	if  ( modtype == O_INP ) return "input";
 	if  ( modtype == O_CALM ) return "calm";

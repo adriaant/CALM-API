@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2011 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
 	Description:	Analysis tools for the CALM neural network. These routines explore the
 					nonlinear dynamics behavior of CALM nets, producing images as output.
 */
@@ -58,7 +58,7 @@ AnalysisTools::~AnalysisTools()
 }
 
 
-void AnalysisTools::InitializeBoundaryMatrix( char* mod, char* inp, int xres, int yres, int iters )
+void AnalysisTools::InitializeBoundaryMatrix( char const *mod, char const *inp, int xres, int yres, int iters )
 {
 	mPatIdx = gCALMAPI->CALMGetModuleIndex( inp );
 	mModIdx = gCALMAPI->CALMGetModuleIndex( mod );
@@ -119,8 +119,7 @@ void AnalysisTools::FillBoundaryMatrix( int p, int q )
 	}
 }
 
-void AnalysisTools::MatrixBoundaryForOnline( int run, data_type* pat, char* mod, char* inp, 
-									   int xres, int yres, int iters )
+void AnalysisTools::MatrixBoundaryForOnline( int run, data_type* pat, char const *mod, char const *inp, int xres, int yres, int iters )
 {
 	int	p, q, h;
 
@@ -156,7 +155,7 @@ void AnalysisTools::MatrixBoundaryForOnline( int run, data_type* pat, char* mod,
 }
 
 
-void AnalysisTools::InitializeBoundary( char* mod, char* inp, int xres, int yres, int iters )
+void AnalysisTools::InitializeBoundary( char const *mod, char const *inp, int xres, int yres, int iters )
 {
 	mPatIdx = gCALMAPI->CALMGetModuleIndex( inp );
 	mModIdx = gCALMAPI->CALMGetModuleIndex( mod );
@@ -217,8 +216,7 @@ void AnalysisTools::FillBoundary( int p, int q )
 }
 
 
-void AnalysisTools::BoundaryForOnline( int run, data_type* pat, char* mod, char* inp, 
-									   int xres, int yres, int iters )
+void AnalysisTools::BoundaryForOnline( int run, data_type* pat, char const *mod, char const *inp, int xres, int yres, int iters )
 {
 	int	p, q, h;
 
@@ -246,8 +244,7 @@ void AnalysisTools::BoundaryForOnline( int run, data_type* pat, char* mod, char*
 }
 
 
-void AnalysisTools::BoundaryForOffline( int run, char* mod, char* inp, int xres, int yres, int iters,
-										int patIdx, int x, int y )
+void AnalysisTools::BoundaryForOffline( int run, char const *mod, char const *inp, int xres, int yres, int iters, int patIdx, int x, int y )
 {
 	int	h, i;
 
@@ -373,7 +370,7 @@ void AnalysisTools::BifurcationForOnlineClamp( int run, int outIdx, int unit, in
 }
 
 
-void AnalysisTools::InitializeBifurcation( char* inp, int xres, int yres, int trans, 
+void AnalysisTools::InitializeBifurcation( char const *inp, int xres, int yres, int trans,
 										   int iters, data_type start, data_type end, data_type par )
 {
 	mPatIdx = gCALMAPI->CALMGetModuleIndex( inp );
@@ -450,7 +447,7 @@ void AnalysisTools::FillBifurcation( int p, data_type** maxmins )
 }
 
 
-void AnalysisTools::BifurcationForOnline( int run, data_type* pat, char* inp, int xres, int yres, int trans,
+void AnalysisTools::BifurcationForOnline( int run, data_type* pat, char const* inp, int xres, int yres, int trans,
 										  int iters, data_type start, data_type end, data_type par )
 {
 	data_type**		maxmins;
@@ -486,7 +483,7 @@ void AnalysisTools::BifurcationForOnline( int run, data_type* pat, char* inp, in
 }
 
 
-void AnalysisTools::BifurcationForOffline( int run, char* inp, int xres, int yres, int trans, int iters, 
+void AnalysisTools::BifurcationForOffline( int run, char const *inp, int xres, int yres, int trans, int iters,
 										   data_type start, data_type end, data_type par, int patIdx, int x )
 {
 	data_type **maxmins;
@@ -619,7 +616,7 @@ void AnalysisTools::PhaseForOnlineClamp( int run, int outIdx, int unit, int xres
 }
 
 
-void AnalysisTools::InitializePhase( char* inp, int xres, int trans, int iters, 
+void AnalysisTools::InitializePhase( char const *inp, int xres, int trans, int iters,
 									 data_type start, data_type step, data_type end, data_type par )
 {
 	mPatIdx = gCALMAPI->CALMGetModuleIndex( inp );
@@ -705,7 +702,7 @@ bool AnalysisTools::FillPhase( data_type x, int p, data_type rgbStep )
 }
 
 
-void AnalysisTools::PhaseForOnline( int run, data_type* pat, char* inp, int xres, int trans, int iters, 
+void AnalysisTools::PhaseForOnline( int run, data_type* pat, char const *inp, int xres, int trans, int iters,
 									data_type start, data_type step, data_type end, data_type par )
 {
 	data_type	x, rgbStep;
@@ -743,7 +740,7 @@ void AnalysisTools::PhaseForOnline( int run, data_type* pat, char* inp, int xres
 }
 
 
-void AnalysisTools::PhaseForOffline( int run, char* inp, int xres, int trans, int iters, 
+void AnalysisTools::PhaseForOffline( int run, char const *inp, int xres, int trans, int iters,
 									data_type start, data_type step, data_type end,
 									data_type par, int patIdx, int p )
 {

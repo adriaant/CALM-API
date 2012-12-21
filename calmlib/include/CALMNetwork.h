@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2011 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
 	Description:	Class definition for CALM network
 */
 
@@ -102,7 +102,7 @@ public:
 
 // PRINTERS
 	bool				WriteSpecs( char* filename );
-	char*				GetTypeString( int modtype );
+	const char*			GetTypeString( int modtype );
 	int					GetMaximumSize( void );
 	void				PrintCommitted( ostream* os );
 	void				PrintModules( ostream* os );
@@ -123,7 +123,7 @@ public:
 	inline int			GetNumInputs( void ) { return mNumInputModules; }
 	inline int			GetModuleSize( int idx ) { return mModules[idx]->GetModuleSize(); }
 	inline Module*		GetModule( int idx ) { return mModules[idx]; }
-	int 				GetModuleIndex( char* mdlname );
+	int 				GetModuleIndex( char const *mdlname );
 	inline data_type	GetModuleActivation( int idx, int i ) { return mModules[idx]->GetActivationR(i); }
 	inline int			GetNumPatterns( void ){ return mNumPatterns; }
 	data_type*			GetPattern( int mIdx, int pIdx );
