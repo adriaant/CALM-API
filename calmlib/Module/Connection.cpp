@@ -244,12 +244,12 @@ void Connection::UpdateNormal( int idx, data_type act, data_type mu, data_type b
 		}
 		
 		// apply the Grossberg learning rule
-/*		dw = mu * act * (
+		dw = mu * act * (
 			 ( mParameters[K_Lmax] - w ) * inAct - 
 			   mParameters[L_L] * ( w - mParameters[K_Lmin] ) * ( backAct - w * inAct ) );
-*/
+
 		// Koutnik variant
-		dw = mu * act * (inAct - w);
+//		dw = mu * act * (inAct - w);
 
 		// add to sum of weight changes
 		dw_sum += dw;
