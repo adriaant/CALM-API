@@ -17,7 +17,5 @@ void CALMUnit::Update( void )
 		mActNew = decay +  ( mActNew / ( 1.0 + mActNew ) ) * ( 1.0 - decay );
 	else
 		mActNew = decay + ( mActNew / ( 1.0 - mActNew ) ) * decay;
-	
-	mActNew = Max ( Min( mActNew, 1.0 ), 0.0 );
 }
 
