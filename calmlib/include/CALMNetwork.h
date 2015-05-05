@@ -95,8 +95,8 @@ public:
 	inline bool			IsClamped( int idx, int node ) { return mModules[idx]->IsClamped( node ); }
 
 // GNUPLOT link
-	void 	 			Init3DPlot( char* fromMdl, char* toMdl );
-	void				Resize3DPlot( char* fromMdl, char* toMdl );
+	void 	 			Init3DPlot( const char* fromMdl, const char* toMdl );
+	void				Resize3DPlot( const char* fromMdl, const char* toMdl );
 	void 	 			End3DPlot( void );
 	void 	 			Do3DPlot( void );
 

@@ -19,7 +19,7 @@ class MultiSequence
 public:
 
 	MultiSequence( void );
-	MultiSequence( int numfiles, int fileIdx, int epochs, char* fbname );
+	MultiSequence( int numfiles, int fileIdx, int epochs, const char* fbname );
 	~MultiSequence();
 	
 	int			LoadPatternFiles( void );

@@ -778,7 +778,7 @@ bool CALMNetwork::CollectWinners( int pIdx, int ite )
  *		      3D Plot FUNCTIONS 	    *
  *--------------------------------------*/
 
-void CALMNetwork::Init3DPlot( char* fromMdl, char* toMdl )
+void CALMNetwork::Init3DPlot( const char* fromMdl, const char* toMdl )
 {
 	m3DTo = GetModuleIndex( toMdl );	
 	for ( int j = 0; j < mModules[m3DTo]->GetNumInConn(); j++ )
@@ -793,7 +793,7 @@ void CALMNetwork::Init3DPlot( char* fromMdl, char* toMdl )
 						   GetModuleSize( GetModuleIndex( fromMdl ) ) );
 }
 
-void CALMNetwork::Resize3DPlot( char* fromMdl, char* toMdl )
+void CALMNetwork::Resize3DPlot( const char* fromMdl, const char* toMdl )
 {
 	m3DTo = GetModuleIndex( toMdl );	
 	for ( int j = 0; j < mModules[m3DTo]->GetNumInConn(); j++ )

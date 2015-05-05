@@ -16,7 +16,7 @@
 extern CALMAPI* gCALMAPI;		// pointer to API interface
 
 
-MultiSequence::MultiSequence( int numfiles, int fileIdx, int epochs, char* fbname )
+MultiSequence::MultiSequence( int numfiles, int fileIdx, int epochs, const char* fbname )
 {
 	mNumFiles = numfiles;	// number of files to train
 	mFileIdx = fileIdx;		// index of file to start training with

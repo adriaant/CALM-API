@@ -59,7 +59,7 @@ CALMAPI::~CALMAPI( void )
 // logfiles: specify a new log file for writing out network text date. 
 	// pass the ofstream pointer and a file name
 	// user should have set the directory beforehand, e.g. using CALMSetWorkingDirectory()
-int CALMAPI::OpenCALMLog( char* logname )
+int CALMAPI::OpenCALMLog( const char* logname )
 {
 	if ( logname == NULL )
 	{

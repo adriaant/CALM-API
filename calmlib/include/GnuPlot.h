@@ -6,7 +6,7 @@
 */
 
 #ifndef _GNUPLOT_H_
-#define _GNUPLOT_H
+#define _GNUPLOT_H_
 
 #include <cstdio>
 #include <cstring>

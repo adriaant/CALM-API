@@ -89,6 +89,6 @@ void RUnit::operator=( RUnit &source )
 	mActDelay = source.mActDelay;
 	mPotential = source.mPotential;
 	mVCounter = source.mVCounter;
-	mClamped = mClamped;
+	mClamped = source.mClamped;
 }
 
