@@ -125,6 +125,8 @@
 		FB61745A0F9C260B007F6969 /* MultiSeqSample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MultiSeqSample.cpp; path = exec/MultiSeqSample.cpp; sourceTree = "<group>"; };
 		FB61745B0F9C260B007F6969 /* MultiSequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MultiSequence.cpp; path = exec/MultiSequence.cpp; sourceTree = "<group>"; };
 		FB6174770F9C26A5007F6969 /* MultiSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiSequence.h; path = include/MultiSequence.h; sourceTree = "<group>"; };
+		FBAE79EE1AFD02D300B3C056 /* SampleFeedback.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SampleFeedback.cpp; path = exec/SampleFeedback.cpp; sourceTree = "<group>"; };
+		FBAE79EF1AFD02DC00B3C056 /* SampleOffline.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SampleOffline.cpp; path = exec/SampleOffline.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,9 +259,11 @@
 		FB7E6F6D0F5A8F26008FD5BA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				FB6174770F9C26A5007F6969 /* MultiSequence.h */,
 				FB0D54CF0F9A0ADF00B9E5E4 /* SampleOnline.cpp */,
+				FBAE79EF1AFD02DC00B3C056 /* SampleOffline.cpp */,
+				FBAE79EE1AFD02D300B3C056 /* SampleFeedback.cpp */,
 				FB61745A0F9C260B007F6969 /* MultiSeqSample.cpp */,
+				FB6174770F9C26A5007F6969 /* MultiSequence.h */,
 				FB61745B0F9C260B007F6969 /* MultiSequence.cpp */,
 			);
 			name = Tools;

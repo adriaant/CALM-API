@@ -1,7 +1,7 @@
 /*
 Description:	Abstract class definition for analysis tools
 Author:			Adriaan Tijsseling (AGT)
-Copyright: 		(c) Copyright 2002 Adriaan Tijsseling. All rights reserved.
+Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 Change History (most recent first):
 	31/03/2002 - AGT - initial version
 */
