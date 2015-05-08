@@ -1,6 +1,6 @@
 .SILENT:
 
-CC = g++ -O4 -funroll-all-loops -fexpensive-optimizations
+CC = g++ -O3
 AR = ar
 RM = rm -f
 TOUCH = touch

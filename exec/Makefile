@@ -30,7 +30,7 @@ $(EXEC): makeinclude
 	@echo -- making $(EXEC) --
 	$(CC) -g $(OPTIONS) $(OBJS) $(LIBDIRS) $(LIBS) -o $@
 	@echo -- installing $(EXEC) --
-	mv -f $(EXEC) $(HOME)bin/
+	mv -f $(EXEC) $$HOME/bin/
 	@echo done
 
 clean:
