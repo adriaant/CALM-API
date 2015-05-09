@@ -10,13 +10,13 @@ OBJS = $(LO)*.o
 
 # uncomment or change lines in this block to set up your own simulation executable
   # offline training and testing example
-	#SRCS = Main.cpp SampleOffline.cpp
+	SRCS = Main.cpp SampleOffline.cpp
   # online training and testing example, demonstration of AnalysisTools
 	#SRCS = Main.cpp SampleOnline.cpp
   # feedback sample
 	#SRCS = Main.cpp SampleFeedback.cpp
   # training of multiple sequences
-	SRCS = Main.cpp MultiSeqSample.cpp MultiSequence.cpp
+	#SRCS = Main.cpp MultiSeqSample.cpp MultiSequence.cpp
 # do not change other lines
 
 $(EXEC): makeinclude

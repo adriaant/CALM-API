@@ -41,7 +41,7 @@ void ModuleMap::SetInhibitionMap( void )
 	denom = (data_type)(mModuleSize);
 
 	// calculate optimal sigma
-	sigma = (-4.0/denom) * log( ( 0.01 + exp( - 0.25 * denom ) ) / (denom+1.0) );
+	sigma = ( -4.0 / denom) * log( ( 0.01 + exp( - 0.25 * denom ) ) / (denom + 1.0) );
 	cerr << sigma << endl;
 
 	for ( i = 0; i < mModuleSize; i++ )
@@ -54,8 +54,9 @@ void ModuleMap::SetInhibitionMap( void )
 			// in this function SIGMA depends on module size. A module size up to 20 has
 			// experimentally been defined to have an optimal sigma around 0.06. With more nodes,
 			// this sigma slightly increases. With 64 nodes, sigma should be picked around 0.15
-			mMapWeights[i][j] = (denom+1.0) * 
-				exp( 0.0 - ( sigma*dist*dist ) / denom ) - denom - 1.0 + mParameters[DOWN];
+			// (see also https://www.dropbox.com/s/8d0u9o71sn4sbrh/gaussian.pdf )
+			mMapWeights[i][j] = (denom + 1.0) *
+				exp( 0.0 - ( sigma * dist * dist ) / denom ) - denom - 1.0 + mParameters[DOWN];
 
 			// the old version, published in Phaf et al. Somewhat less elegant.
 			// Its sigma can range between 1 and 15 for good results. AMAP and BMAP
