@@ -26,7 +26,6 @@ void ModuleMap::Initialize( int moduleSize, char* moduleName, data_type* pars, i
 	
 	// set the inhibition weights
 	SetInhibitionMap();
-	
 }
 
 
@@ -63,7 +62,7 @@ void ModuleMap::SetInhibitionMap( void )
 			// need to be defined such that BMAP < AMAP and AMAP - BMAP is of a reasonably
 			// wide range. 
 //			mMapWeights[i][j] = 8.8 * exp( 0.0 - (dist*dist)/(2*sigma*sigma)) - 10.0;
-		}		
+		}
 	}
 /*
 	cerr << "map for '" << GetModuleName() << "': ";

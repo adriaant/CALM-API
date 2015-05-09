@@ -77,6 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FB05D00D1AFE638D004044B8 /* Resizing.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Resizing.cpp; path = exec/Resizing.cpp; sourceTree = "<group>"; };
 		FB0D54070F99FA0E00B9E5E4 /* Calm.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; name = Calm.1; path = Documentation/man1/Calm.1; sourceTree = "<group>"; };
 		FB0D54080F99FA7300B9E5E4 /* libcalm.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libcalm.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB0D54090F99FAA700B9E5E4 /* AnalysisTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalysisTools.h; path = calmlib/include/AnalysisTools.h; sourceTree = "<group>"; };
@@ -265,6 +266,7 @@
 				FB61745A0F9C260B007F6969 /* MultiSeqSample.cpp */,
 				FB6174770F9C26A5007F6969 /* MultiSequence.h */,
 				FB61745B0F9C260B007F6969 /* MultiSequence.cpp */,
+				FB05D00D1AFE638D004044B8 /* Resizing.cpp */,
 			);
 			name = Tools;
 			sourceTree = "<group>";

@@ -241,7 +241,7 @@ after every number of epochs. This function checks if resizing is necessary and 
 
 ### Multiple Sequences
 
-Because of the implementation of time-delay connections (see documentation), the CALM network can be trained with sequential information. The `MultiSequence` class contains routines to train a given network on a set of sequences. Compile an executable for the files `Main.cpp`, `MultiSequence.cpp` and `MultiSeqSample.cpp`, and run it with:
+With the implementation of time-delay connections, the CALM network can be trained with sequential information. The `MultiSequence` class contains routines to train a given network using an ordered set of sequences. Compile an executable for the files `Main.cpp`, `MultiSequence.cpp` and `MultiSeqSample.cpp`, and run it with:
 
 ``` 
 calm -r 1 -e 10 -i 100 -d simulations/multi -b king -v 0 -p 0

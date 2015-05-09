@@ -22,7 +22,7 @@ void	Train( void );
 void	Test( int run );
 
 
-// initializes the network and creates the online pattern storage
+// initializes the network and loads patterns from file
 bool InitNetwork( void )
 {
 	int calmErr;
