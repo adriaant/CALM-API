@@ -23,7 +23,7 @@ void RUnit::Reset( int win )
 	else if ( win & O_WT )	// resets stored long term activation
 	{
 		mVCounter = 0; 
-		mPotential = 0;
+		mPotential = 1.0;
 	}
 	else
 	{
