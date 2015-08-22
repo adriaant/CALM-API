@@ -12,6 +12,8 @@
 #include "CALMGlobal.h"
 #include "CALM.h"		// the interface file to the CALM API Library
 
+#define PLOT3D		1	// plot with GNUPlot (needs X11 server to be running)
+
 // LOCAL GLOBALS
 extern CALMAPI*	gCALMAPI;	// pointer to API interface
 
@@ -60,6 +62,13 @@ bool InitNetwork( void )
 	gCALMAPI->CALMShow();
 	gCALMAPI->CALMShowPatterns();
 
+#if PLOT3D
+	// tell API to start a 3D weight plot for weights between two selected modules
+	// be sure to modify the names if you use a different network file!
+	gCALMAPI->CALMInit3DPlot( "pat", "out" );
+	gCALMAPI->CALM3DPlot();
+#endif
+
 	return true;
 }
 
@@ -100,6 +109,11 @@ void DoSimulation( void )
 		gCALMAPI->CALMShowWeights();
 	}
 	cerr << endl;
+
+#if PLOT3D
+	// stop 3D plotting
+	gCALMAPI->CALMEnd3DPlot();
+#endif
 }
 
 // training routine
@@ -112,6 +126,10 @@ void Train( void )
 		if ( gCALMAPI->CALMGetOrder() == kPermuted ) gCALMAPI->CALMPermutePatterns();
 		// train single pass through sequence
 		gCALMAPI->CALMTrainFile( epoch ); 
+#if PLOT3D
+		// show changed weights
+		gCALMAPI->CALM3DPlot();
+#endif
 	}
 }
 

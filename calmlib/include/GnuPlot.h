@@ -37,7 +37,7 @@ private:
 	int			mCounter;
 	FILE*		mGnuPipe;
 	double*		mBuffer;
-	double**	mMatrix;
+	double**     mMatrix;
 	double		mMax;
 	double		mMin;
 	int			mRows;

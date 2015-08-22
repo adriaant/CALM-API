@@ -8,6 +8,9 @@
 
 #include "GnuPlot.h"
 #include	<iostream>
+
+#define USE_AQUA		1	// plot using AquaTerm if on Mac, if desired.
+
 using namespace std;
 
 extern double SafeAbs( double val );
@@ -25,8 +28,10 @@ GnuPlot::GnuPlot( int xr1, int xr2, int yr1, int yr2 )
 // not going to use a 3d plot
 	mMatrix = NULL;
 // open the pipe to the gnuplot program
-	mGnuPipe = popen( "/usr/local/bin/gnuplot -persist", "w" );
-//	fprintf(mGnuPipe, "set term x11\nset mouse\n");
+	mGnuPipe = popen( "/usr/local/bin/gnuplot --persist", "w" );
+#if USE_AQUA
+	fprintf(mGnuPipe, "set term aqua\n");
+#endif
 // indicate the initial range for the plot
 	fprintf( mGnuPipe, "set xrange [%d:%d]\n", xr1, xr2 ); 
 	fprintf( mGnuPipe, "set yrange [%d:%d]\n", yr1, yr2 );
@@ -44,8 +49,10 @@ GnuPlot::GnuPlot( int r, int c )
 	mMatrix = new double*[ mRows ];
 	for ( int i = 0; i < mRows; i++ ) mMatrix[i] = new double[ mCols ];
 // open the pipe to the gnuplot program
-	mGnuPipe = popen( "/usr/local/bin/gnuplot -persist", "w" );
-//	fprintf(mGnuPipe, "set term x11\nset mouse\n");
+	mGnuPipe = popen( "/usr/local/bin/gnuplot --persist", "w" );
+#if USE_AQUA
+	fprintf(mGnuPipe, "set term aqua\n");
+#endif
 // set options for 3d plot
 	fprintf( mGnuPipe, "set hidden3d\n" );	
 	fprintf( mGnuPipe, "set zrange [0:1]\n" );

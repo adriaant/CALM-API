@@ -22,7 +22,7 @@ public:
 	MultiSequence( int numfiles, int fileIdx, int epochs, const char* fbname );
 	~MultiSequence();
 	
-	int			LoadPatternFiles( void );
+	int		LoadPatternFiles( void );
 	bool		RunMultiSequenceSimulation( void );
 	void		TrainCurrentSequence( int idx );
 	void		TestCurrentSequence( int idx, int* winner );
@@ -32,10 +32,10 @@ public:
 	
 protected:
 
-	data_type***	mPatterns;			// array of pattern matrices
-	int*			mNumPats;
-	int				mNumFiles;			// number of pattern files
-	int				mFileIdx;			// index of file to start training with
+	data_type***		mPatterns;		// array of pattern matrices
+	int*				mNumPats;
+	int				mNumFiles;		// number of pattern files
+	int				mFileIdx;		// index of file to start training with
 	int				mOutIdx;			// reference to feedback module
 	int				mEpochs;			// max number of epochs to train
 };
