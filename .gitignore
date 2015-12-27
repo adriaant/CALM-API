@@ -1,3 +1,7 @@
+build/*
+.o
+logs/*
+=======
 # Xcode
 .DS_Store
 build/
@@ -39,4 +43,3 @@ Pods
 *.la
 *.a
 *.lib
-
