@@ -12,7 +12,7 @@ void CALMWeight::SetWeight( data_type newWeight, data_type maxval, data_type min
 	// record weight changes
 	mWeightChange = newWeight;
 	
-	// apply weight update rule
+	// add change to current weight and limit between min and max
 	mWeightValue = Max( Min( mWeightValue + mWeightChange, maxval ), minval );
 }
 
