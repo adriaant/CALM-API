@@ -67,16 +67,17 @@
 		};
 		FB6174510F9C25D8007F6969 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = /usr/share/man/man1/;
+			buildActionMask = 12;
+			dstPath = "";
 			dstSubfolderSpec = 0;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FB05D00D1AFE638D004044B8 /* Resizing.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Resizing.cpp; path = exec/Resizing.cpp; sourceTree = "<group>"; };
 		FB0D54070F99FA0E00B9E5E4 /* Calm.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; name = Calm.1; path = Documentation/man1/Calm.1; sourceTree = "<group>"; };
 		FB0D54080F99FA7300B9E5E4 /* libcalm.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libcalm.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB0D54090F99FAA700B9E5E4 /* AnalysisTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalysisTools.h; path = calmlib/include/AnalysisTools.h; sourceTree = "<group>"; };
@@ -125,6 +126,8 @@
 		FB61745A0F9C260B007F6969 /* MultiSeqSample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MultiSeqSample.cpp; path = exec/MultiSeqSample.cpp; sourceTree = "<group>"; };
 		FB61745B0F9C260B007F6969 /* MultiSequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MultiSequence.cpp; path = exec/MultiSequence.cpp; sourceTree = "<group>"; };
 		FB6174770F9C26A5007F6969 /* MultiSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiSequence.h; path = include/MultiSequence.h; sourceTree = "<group>"; };
+		FBAE79EE1AFD02D300B3C056 /* SampleFeedback.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SampleFeedback.cpp; path = exec/SampleFeedback.cpp; sourceTree = "<group>"; };
+		FBAE79EF1AFD02DC00B3C056 /* SampleOffline.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SampleOffline.cpp; path = exec/SampleOffline.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,10 +260,13 @@
 		FB7E6F6D0F5A8F26008FD5BA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				FB6174770F9C26A5007F6969 /* MultiSequence.h */,
 				FB0D54CF0F9A0ADF00B9E5E4 /* SampleOnline.cpp */,
+				FBAE79EF1AFD02DC00B3C056 /* SampleOffline.cpp */,
+				FBAE79EE1AFD02D300B3C056 /* SampleFeedback.cpp */,
 				FB61745A0F9C260B007F6969 /* MultiSeqSample.cpp */,
+				FB6174770F9C26A5007F6969 /* MultiSequence.h */,
 				FB61745B0F9C260B007F6969 /* MultiSequence.cpp */,
+				FB05D00D1AFE638D004044B8 /* Resizing.cpp */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -357,7 +363,7 @@
 		08FB7793FE84155DC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0630;
 			};
 			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "Calm" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -434,6 +440,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = "";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -441,7 +450,7 @@
 					"_GLIBCXX_DEBUG=1",
 					"_GLIBCXX_DEBUG_PEDANTIC=1",
 				);
-				INSTALL_PATH = /usr/local/bin;
+				INSTALL_PATH = $HOME/bin/;
 				PRODUCT_NAME = calm;
 			};
 			name = Debug;
@@ -451,8 +460,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = "";
 				GCC_MODEL_TUNING = G5;
-				INSTALL_PATH = /usr/local/bin;
+				INSTALL_PATH = $HOME/bin/;
 				PRODUCT_NAME = calm;
 			};
 			name = Release;
@@ -460,7 +472,6 @@
 		1DEB923608733DC60010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -473,7 +484,6 @@
 		1DEB923708733DC60010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -487,7 +497,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				COPY_PHASE_STRIP = NO;
-				DSTROOT = "$(PROJECT_DIR)/";
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = "";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -495,7 +507,7 @@
 					"_GLIBCXX_DEBUG=1",
 					"_GLIBCXX_DEBUG_PEDANTIC=1",
 				);
-				INSTALL_PATH = "$(PROJECT_DIR)/";
+				INSTALL_PATH = $HOME/bin/;
 				PRODUCT_NAME = multisequence;
 			};
 			name = Debug;
@@ -506,9 +518,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DSTROOT = "$(PROJECT_DIR)/";
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = "";
 				GCC_MODEL_TUNING = G5;
-				INSTALL_PATH = "$(PROJECT_DIR)/";
+				INSTALL_PATH = $HOME/bin/;
 				PRODUCT_NAME = multisequence;
 			};
 			name = Release;
@@ -517,7 +531,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_EXTENSION = a;
@@ -536,7 +549,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

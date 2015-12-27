@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	Pattern class. Contains everything related to reaading in,
 					storing, and accessing patterns. A subclass can be derived 
 					if you want to add preprocessing functions

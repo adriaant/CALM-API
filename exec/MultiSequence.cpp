@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	Class definition for multiple sequence learning using CALM networks
 					with time-delay connections.
 */
@@ -8,15 +8,15 @@
 #include "MultiSequence.h"
 #include "Rnd.h"
 
-#define FEEDBACK	1	// set whether to use feedback for training
-#define	GROWING		1	// set whether to grow/prune modules
+#define FEEDBACK		1	// set whether to use feedback for training
+#define GROWING		1	// set whether to grow/prune modules
 #define GROWCHECK	5	// number of epochs after which the network is checked for resizing
-#define	PLOT3D		1	// plot with GNUPlot (needs X11 server to be running)
+#define PLOT3D		1	// plot with GNUPlot (needs X11 server to be running)
 
 extern CALMAPI* gCALMAPI;		// pointer to API interface
 
 
-MultiSequence::MultiSequence( int numfiles, int fileIdx, int epochs, char* fbname )
+MultiSequence::MultiSequence( int numfiles, int fileIdx, int epochs, const char* fbname )
 {
 	mNumFiles = numfiles;	// number of files to train
 	mFileIdx = fileIdx;		// index of file to start training with
@@ -45,12 +45,12 @@ MultiSequence::~MultiSequence()
 // With this method, pattern access will be faster than repeated reloading of files.
 int	MultiSequence::LoadPatternFiles( void )
 {
-	int			i, j, k;
+	int		i, j, k;
 	int 		err = kNoErr;
 	char		filename[256];
 	char		stridx[5];
 	ifstream	infile;
-	int			numBits = gCALMAPI->CALMGetInputLen(); // make sure CALMOnlinePatterns was called earlier
+	int		numBits = gCALMAPI->CALMGetInputLen(); // make sure CALMOnlinePatterns was called earlier
 	
 	cerr << "input len is " << numBits << endl;
 	
@@ -97,14 +97,14 @@ int	MultiSequence::LoadPatternFiles( void )
 // Core routine for training multiple sequences
 bool MultiSequence::RunMultiSequenceSimulation( void )
 {		
-	int*	array;
+	int*		array;
 	int		winner;
 	int		i, idx, epochCtr = 0, totalEpochs = 0, epoch;
-	bool	done = true, trained = false;
+	bool		done = true, trained = false;
 	int		currentFileIdx = mFileIdx+1;
-	char	comment[32];
-	char	dummy[5];
-	bool	resized;
+	char		comment[32];
+	char		dummy[5];
+	bool		resized;
 
 #if PLOT3D			
 // tell API to start a 3D weight plot for weights between two selected modules

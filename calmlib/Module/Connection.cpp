@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	Implementation of Connection class
 */
 

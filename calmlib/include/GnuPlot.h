@@ -6,7 +6,7 @@
 */
 
 #ifndef _GNUPLOT_H_
-#define _GNUPLOT_H
+#define _GNUPLOT_H_
 
 #include <cstdio>
 #include <cstring>
@@ -37,7 +37,7 @@ private:
 	int			mCounter;
 	FILE*		mGnuPipe;
 	double*		mBuffer;
-	double**	mMatrix;
+	double**     mMatrix;
 	double		mMax;
 	double		mMin;
 	int			mRows;

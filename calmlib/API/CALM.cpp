@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	API interface for the Categorization And Learning Module Network
 */
 
@@ -59,7 +59,7 @@ CALMAPI::~CALMAPI( void )
 // logfiles: specify a new log file for writing out network text date. 
 	// pass the ofstream pointer and a file name
 	// user should have set the directory beforehand, e.g. using CALMSetWorkingDirectory()
-int CALMAPI::OpenCALMLog( char* logname )
+int CALMAPI::OpenCALMLog( const char* logname )
 {
 	if ( logname == NULL )
 	{

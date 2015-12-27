@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	Implementation for Module class
 */
 
@@ -112,11 +112,11 @@ bool Module::NeedsResizing( int* node )
 	// indicate the grow factors and return for growing
 	if ( resiz && *node == kUndefined )
 	{
-//		cerr << "max vs runnerup: " << maxval << " " << nextmax << " = " << tmpval << endl;
+		cerr << "max vs runnerup: " << maxval << " " << nextmax << " = " << tmpval << endl;
 	}
 	
 bail:
-//	if ( resiz ) PrintPotentials( &cerr );
+	if ( resiz ) PrintPotentials( &cerr );
 	return resiz;
 }
 

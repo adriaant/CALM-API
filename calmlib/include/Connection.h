@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		� Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		� Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	Class definition for connections between modules
 */
 

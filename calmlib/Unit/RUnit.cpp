@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	Implementation for CALMUnit subclass
 */
 
@@ -23,7 +23,7 @@ void RUnit::Reset( int win )
 	else if ( win & O_WT )	// resets stored long term activation
 	{
 		mVCounter = 0; 
-		mPotential = 0;
+		mPotential = 1.0;
 	}
 	else
 	{
@@ -89,6 +89,6 @@ void RUnit::operator=( RUnit &source )
 	mActDelay = source.mActDelay;
 	mPotential = source.mPotential;
 	mVCounter = source.mVCounter;
-	mClamped = mClamped;
+	mClamped = source.mClamped;
 }
 

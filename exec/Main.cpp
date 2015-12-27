@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	Main file for using the CALM API
 					This code creates an executable that uses the CALM API. 
 					The user has to provide the functions InitNetwork() and DoSimulation().
@@ -147,7 +147,7 @@ loop:
 void Usage( void )
 {
     cerr << "Usage: calm (-OPTIONS) [default]" << endl;
-    cerr << "    -h        = display this help and exit" << endl;
+    cerr << "    -h        = display usage information" << endl;
     cerr << "    -r [1]    = number of simulations to run" << endl;
     cerr << "    -e [50]   = number of epochs to present each set of patterns" << endl;
     cerr << "    -i [100]  = number of iterations to train a single pattern" << endl;
@@ -158,7 +158,7 @@ void Usage( void )
     cerr << "                .pat : pattern file" << endl;
     cerr << "                .fb  : feedback file" << endl;
     cerr << "    -d [.]    = directory containing the network files" << endl;
-    cerr << "    -c [0]    = stop training of current pattern after convergence" << endl;
+    cerr << "    -c [0]    = set to 1 to stop training current pattern after convergence" << endl;
 	cerr << "    -S [0]    = set to 1 to load weights and only do a test phase" << endl;
     cerr << "    -v [1]    = verbosity level, defined as a bitwise operation of:" << endl;
     cerr << "                0  : silent mode" << endl;

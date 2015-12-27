@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	Implementation for ModuleMap class
 */
 
@@ -26,7 +26,6 @@ void ModuleMap::Initialize( int moduleSize, char* moduleName, data_type* pars, i
 	
 	// set the inhibition weights
 	SetInhibitionMap();
-	
 }
 
 
@@ -41,7 +40,7 @@ void ModuleMap::SetInhibitionMap( void )
 	denom = (data_type)(mModuleSize);
 
 	// calculate optimal sigma
-	sigma = (-4.0/denom) * log( ( 0.01 + exp( - 0.25 * denom ) ) / (denom+1.0) );
+	sigma = ( -4.0 / denom) * log( ( 0.01 + exp( - 0.25 * denom ) ) / (denom + 1.0) );
 	cerr << sigma << endl;
 
 	for ( i = 0; i < mModuleSize; i++ )
@@ -54,15 +53,16 @@ void ModuleMap::SetInhibitionMap( void )
 			// in this function SIGMA depends on module size. A module size up to 20 has
 			// experimentally been defined to have an optimal sigma around 0.06. With more nodes,
 			// this sigma slightly increases. With 64 nodes, sigma should be picked around 0.15
-			mMapWeights[i][j] = (denom+1.0) * 
-				exp( 0.0 - ( sigma*dist*dist ) / denom ) - denom - 1.0 + mParameters[DOWN];
+			// (see also https://www.dropbox.com/s/8d0u9o71sn4sbrh/gaussian.pdf )
+			mMapWeights[i][j] = (denom + 1.0) *
+				exp( 0.0 - ( sigma * dist * dist ) / denom ) - denom - 1.0 + mParameters[DOWN];
 
 			// the old version, published in Phaf et al. Somewhat less elegant.
 			// Its sigma can range between 1 and 15 for good results. AMAP and BMAP
 			// need to be defined such that BMAP < AMAP and AMAP - BMAP is of a reasonably
 			// wide range. 
 //			mMapWeights[i][j] = 8.8 * exp( 0.0 - (dist*dist)/(2*sigma*sigma)) - 10.0;
-		}		
+		}
 	}
 /*
 	cerr << "map for '" << GetModuleName() << "': ";

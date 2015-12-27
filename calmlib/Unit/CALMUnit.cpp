@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	Implementation for CALMUnit class
 */
 
@@ -17,7 +17,5 @@ void CALMUnit::Update( void )
 		mActNew = decay +  ( mActNew / ( 1.0 + mActNew ) ) * ( 1.0 - decay );
 	else
 		mActNew = decay + ( mActNew / ( 1.0 - mActNew ) ) * decay;
-	
-	mActNew = Max ( Min( mActNew, 1.0 ), 0.0 );
 }
 

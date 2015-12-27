@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2011 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	Sample simulation using the CALM API. This particular code trains a CALM
 					network specified in the command line options. 
 					Patterns are loaded from file. Invoke with e.g.:
@@ -12,6 +12,8 @@
 #include "CALMGlobal.h"
 #include "CALM.h"		// the interface file to the CALM API Library
 
+#define PLOT3D		1	// plot with GNUPlot (needs X11 server to be running)
+
 // LOCAL GLOBALS
 extern CALMAPI*	gCALMAPI;	// pointer to API interface
 
@@ -22,7 +24,7 @@ void	Train( void );
 void	Test( int run );
 
 
-// initializes the network and creates the online pattern storage
+// initializes the network and loads patterns from file
 bool InitNetwork( void )
 {
 	int calmErr;
@@ -59,6 +61,13 @@ bool InitNetwork( void )
 // OPTIONAL: record display simulation environment to log file
 	gCALMAPI->CALMShow();
 	gCALMAPI->CALMShowPatterns();
+
+#if PLOT3D
+	// tell API to start a 3D weight plot for weights between two selected modules
+	// be sure to modify the names if you use a different network file!
+	gCALMAPI->CALMInit3DPlot( "pat", "out" );
+	gCALMAPI->CALM3DPlot();
+#endif
 
 	return true;
 }
@@ -100,6 +109,11 @@ void DoSimulation( void )
 		gCALMAPI->CALMShowWeights();
 	}
 	cerr << endl;
+
+#if PLOT3D
+	// stop 3D plotting
+	gCALMAPI->CALMEnd3DPlot();
+#endif
 }
 
 // training routine
@@ -112,6 +126,10 @@ void Train( void )
 		if ( gCALMAPI->CALMGetOrder() == kPermuted ) gCALMAPI->CALMPermutePatterns();
 		// train single pass through sequence
 		gCALMAPI->CALMTrainFile( epoch ); 
+#if PLOT3D
+		// show changed weights
+		gCALMAPI->CALM3DPlot();
+#endif
 	}
 }
 

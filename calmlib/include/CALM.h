@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	API interface for the Categorization And Learning Module Network
 */
 
@@ -28,7 +28,7 @@ public:
 	~CALMAPI();
 
 		// create a log file
-	int 				OpenCALMLog( char* logname );
+	int 				OpenCALMLog( const char* logname );
 	inline void 		SetCALMLog( ofstream* log ) { mCALMLog = log; }
 	inline void 		SetCALMLog( ostream* log ) { mCALMLog = log; }
 	inline ostream*		GetCALMLog( void ) { return mCALMLog; }
@@ -137,8 +137,8 @@ public:
 	inline void 	 	CALMDuration( int start ) { CALMSpeedTest( start ); }
 
 		// For 3D plots of weights
-	inline void 	 	CALMInit3DPlot( char* fromMdl, char* toMdl ) { mNetwork->Init3DPlot( fromMdl, toMdl ); }
-	inline void 	 	CALMResize3DPlot( char* fromMdl, char* toMdl ) { mNetwork->Resize3DPlot( fromMdl, toMdl ); }
+	inline void 	 	CALMInit3DPlot( const char* fromMdl, const char* toMdl ) { mNetwork->Init3DPlot( fromMdl, toMdl ); }
+	inline void 	 	CALMResize3DPlot( const char* fromMdl, const char* toMdl ) { mNetwork->Resize3DPlot( fromMdl, toMdl ); }
 	inline void 	 	CALMEnd3DPlot( void ) { mNetwork->End3DPlot(); }
 	inline void 	 	CALM3DPlot( void ) { mNetwork->Do3DPlot(); }
 

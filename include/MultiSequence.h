@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	Class definition for multiple sequence learning using CALM networks
 					with time-delay connections
 */
@@ -19,10 +19,10 @@ class MultiSequence
 public:
 
 	MultiSequence( void );
-	MultiSequence( int numfiles, int fileIdx, int epochs, char* fbname );
+	MultiSequence( int numfiles, int fileIdx, int epochs, const char* fbname );
 	~MultiSequence();
 	
-	int			LoadPatternFiles( void );
+	int		LoadPatternFiles( void );
 	bool		RunMultiSequenceSimulation( void );
 	void		TrainCurrentSequence( int idx );
 	void		TestCurrentSequence( int idx, int* winner );
@@ -32,10 +32,10 @@ public:
 	
 protected:
 
-	data_type***	mPatterns;			// array of pattern matrices
-	int*			mNumPats;
-	int				mNumFiles;			// number of pattern files
-	int				mFileIdx;			// index of file to start training with
+	data_type***		mPatterns;		// array of pattern matrices
+	int*				mNumPats;
+	int				mNumFiles;		// number of pattern files
+	int				mFileIdx;		// index of file to start training with
 	int				mOutIdx;			// reference to feedback module
 	int				mEpochs;			// max number of epochs to train
 };

@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	Sample simulation using the CALM API. This particular code trains a CALM
 					network specified in the command line options with a "online" patterns, 
 					i.e. patterns that are not provided with pattern files but that are received

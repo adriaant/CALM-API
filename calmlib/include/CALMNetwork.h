@@ -1,6 +1,6 @@
 /*
 	Author:			Adriaan Tijsseling (AGT)
-	Copyright: 		(c) Copyright 2002-2013 Adriaan Tijsseling. All rights reserved.
+	Copyright: 		(c) Copyright 2002-2015 Adriaan Tijsseling. All rights reserved.
 	Description:	Class definition for CALM network
 */
 
@@ -95,8 +95,8 @@ public:
 	inline bool			IsClamped( int idx, int node ) { return mModules[idx]->IsClamped( node ); }
 
 // GNUPLOT link
-	void 	 			Init3DPlot( char* fromMdl, char* toMdl );
-	void				Resize3DPlot( char* fromMdl, char* toMdl );
+	void 	 			Init3DPlot( const char* fromMdl, const char* toMdl );
+	void				Resize3DPlot( const char* fromMdl, const char* toMdl );
 	void 	 			End3DPlot( void );
 	void 	 			Do3DPlot( void );
 

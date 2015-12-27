@@ -9,15 +9,19 @@ EXEC = ../calm
 OBJS = $(LO)*.o
 
 # uncomment or change lines in this block to set up your own simulation executable
+
   # offline training and testing example
-	#SRCS = Main.cpp SampleOffline.cpp
+	SRCS = Main.cpp SampleOffline.cpp
   # online training and testing example, demonstration of AnalysisTools
 	#SRCS = Main.cpp SampleOnline.cpp
   # feedback sample
 	#SRCS = Main.cpp SampleFeedback.cpp
   # training of multiple sequences
-	SRCS = Main.cpp MultiSeqSample.cpp MultiSequence.cpp
-# do not change other lines
+	#SRCS = Main.cpp MultiSeqSample.cpp MultiSequence.cpp
+  # growing/pruning example using Gibbons input set
+	#SRCS = Main.cpp Resizing.cpp
+
+# do not change the lines below
 
 $(EXEC): makeinclude
 	@echo -- compiling:
@@ -30,7 +34,7 @@ $(EXEC): makeinclude
 	@echo -- making $(EXEC) --
 	$(CC) -g $(OPTIONS) $(OBJS) $(LIBDIRS) $(LIBS) -o $@
 	@echo -- installing $(EXEC) --
-	mv -f $(EXEC) $(HOME)bin/
+	mv -f $(EXEC) $$HOME/bin/
 	@echo done
 
 clean:
